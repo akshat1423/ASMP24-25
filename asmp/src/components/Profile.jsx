@@ -1,6 +1,5 @@
 import React from 'react'
 import './Profile.css'
-import Navbar from './Navbar'
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -10,7 +9,6 @@ import Container from 'react-bootstrap/Container';
 export default function Profile() {
   return (
     <div className="w-screen profile h-screen relative">
-      <Navbar />
       <h1 className='text-[#D6AA66] sm:ml-[8vw] ml-[6vw] sm:my-[2vh] my-[6vh]'>User Profile</h1>
       <div className='absolute my-[0vh] mx-[10vw] w-[20vw] h-[20vw] md:mt-[2vh]'><svg xmlns="http://www.w3.org/2000/svg" width="20vw" height="20vw" viewBox="0 0 251 243" fill="none">
         <g filter="url(#filter0_d_233_405)">

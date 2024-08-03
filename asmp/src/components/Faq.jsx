@@ -69,13 +69,7 @@ const FAQs = () => {
         <Accordion defaultActiveKey="0">
           {faqsData.map((item, index) => {
             return (
-              // <FAQItem
-              //   key={index}
-              //   question={faq.question}
-              //   answer={faq.answer}
-              //   isOpen={activeIndex === index}
-              //   toggleFAQ={() => toggleFAQ(index)}
-              // />
+              
               <Accordion.Item eventKey={index}>
         <Accordion.Header className='font-fraunces pt-5'>{item.question}</Accordion.Header>
         <Accordion.Body className='font-fraunces pb-5 mt-2'>
