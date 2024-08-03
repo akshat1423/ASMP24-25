@@ -9,19 +9,19 @@
   }
   
   .abt img {
-    max-width: 100%; /* Ensures the image fits within the container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 35vh; /* Limits height relative to the viewport height */
-    object-fit: contain; /* Ensures the image scales proportionally */
-    padding: 3% 5%; /* Adjust padding as a percentage of the container's width */
+    max-width: 100%; 
+    height: auto; 
+    max-height: 35vh;
+    object-fit: contain; 
+    padding: 3% 5%; 
   }
   
   #about {
     margin-top: 2%;
     font-family: Fraunces, serif;
-    font-size: 4vw; /* Responsive font size */
+    font-size: 4vw; 
     font-weight: 700;
-    line-height: 1.2; /* Adjusted line height for better readability */
+    line-height: 1.2; 
     text-align: left;
     margin-left: 10%;
     color: rgba(255, 255, 255, 1);
@@ -31,9 +31,9 @@
     color: rgba(255, 255, 255, 1);
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(89, 84, 84, 0.58) 43.5%, rgba(0, 0, 0, 0.58) 87.5%, rgba(0, 0, 0, 0.58) 100%);
     font-family: Fraunces, serif;
-    font-size: 3vw; /* Responsive font size */
+    font-size: 3vw; 
     font-weight: 400;
-    line-height: 1.5; /* Adjusted line height for better readability */
+    line-height: 1.5;
     text-align: center;
     margin: 1% 10%;
     padding: 3% 5%;
