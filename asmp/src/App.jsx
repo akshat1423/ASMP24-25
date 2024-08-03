@@ -14,6 +14,7 @@ import './App.css'
 import Profile from './components/Profile'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Homee from './components/UltimateHome/Homee.jsx';
+import Toggle from './components/Toggle'
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/toggle" element={<Toggle />} />
+
 
 
     </Routes>
