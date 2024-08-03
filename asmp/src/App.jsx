@@ -6,6 +6,14 @@ import Team from './components/Team/Team'
 import Navbar from './components/Navbar/Navbar'
 import TestimonialSlider from './components/TestimonialSlider/Testimonial'
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link
+} from 'react-router-dom';
+import Register from './components/register.jsx';
+import Login from './components/login.jsx';
 
 function App() {
 
@@ -19,7 +27,14 @@ function App() {
       <Navbar></Navbar>
       <div style={{height:'30vh'}}></div>
       <TestimonialSlider></TestimonialSlider>
-    </>
+   
+    <Router>
+    <Routes>
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
+  </Router>
+  </>
   )
 }
 
