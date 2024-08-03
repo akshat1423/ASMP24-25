@@ -1,0 +1,41 @@
+.page {
+    background: url("https://s3-alpha-sig.figma.com/img/3aea/7cc0/4a88f35f3195ab75b4a4319ee848c502?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WnEDAz6TCloCnfy6FXeG9Q0CInhTBWDHXsb6Jucw8dCQnrHTDK1cxgs~O-wx-TNulMKTNYpZgHsgzGIAy-vUtyTMW0FDY0A2J3JxJ3FFVwS8Spt9w-tBgW4Sz5efPzTxaa4Jcm4pLnWC1bYTeWTKNqU3yTVJpeoWOVhe4AQRdcM4KffUA9vf~UV8wDrmIUYkBpoxHce-uzus66qXP3ulgjP15WZZXmQvDuIzvUbOASlw8JPmw1PEt9yVaAotMGACk3HZW1GMwljE83nlYEAvoRvzBq1GkXp9D-BMvqnKxhVO7ko1iimZXSrhh2UwPn7pqOTeZ-Vt2KrEAyXnoAM3-g__");
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.30);
+  }
+  
+  .abt {
+    text-align: center;
+  }
+  
+  .abt img {
+    max-width: 100%; /* Ensures the image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 35vh; /* Limits height relative to the viewport height */
+    object-fit: contain; /* Ensures the image scales proportionally */
+    padding: 3% 5%; /* Adjust padding as a percentage of the container's width */
+  }
+  
+  #about {
+    margin-top: 2%;
+    font-family: Fraunces, serif;
+    font-size: 4vw; /* Responsive font size */
+    font-weight: 700;
+    line-height: 1.2; /* Adjusted line height for better readability */
+    text-align: left;
+    margin-left: 10%;
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  #content {
+    color: rgba(255, 255, 255, 1);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(89, 84, 84, 0.58) 43.5%, rgba(0, 0, 0, 0.58) 87.5%, rgba(0, 0, 0, 0.58) 100%);
+    font-family: Fraunces, serif;
+    font-size: 3vw; /* Responsive font size */
+    font-weight: 400;
+    line-height: 1.5; /* Adjusted line height for better readability */
+    text-align: center;
+    margin: 1% 10%;
+    padding: 3% 5%;
+  }
+  
