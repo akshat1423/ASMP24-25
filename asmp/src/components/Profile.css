@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+* {
+    font-family: "Fraunces", serif;
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    overflow-x: hidden;
+}
+
+.profile {
+    background-image: url('../assets/616916053c22344f0ae73597de3f17b1.png');
+    background-size: cover;
+    /* scale: 0.8; */
+    /* opacity: 0.64; */
+}
