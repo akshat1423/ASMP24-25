@@ -11,17 +11,17 @@ import image8 from '../../assets/images/yash.png';
 
 const Team = () => {
   const coreMembers = [
-    { name: 'Nishit Moonat', image: image1 },
-    { name: 'Anshika Mishra', image: image2 },
+    { name: 'Nishit Moonat', image: image1 ,contact:'+91 9399358126'},
+    { name: 'Anshika Mishra', image: image2 ,contact:'+91 7987083011'},
   ];
 
   const coordinators = [
-    { name: 'Aadit Sule', image: image3 },
-    { name: 'Aastha Maliwal',  image: image4 },
-    { name: 'Ojas Somani', image: image5 },
-    { name: 'Parv Seth',  image: image6 },
-    { name: 'Vanshika Bansal', image: image7 },
-    { name: 'Yash Choudhary', image: image8 },
+    { name: 'Aadit Sule', image: image3 ,contact:'+91 8459539918'},
+    { name: 'Aastha Maliwal',  image: image4,contact:'+91 9403521022' },
+    { name: 'Ojas Somani', image: image5,contact:'+91 9826420033' },
+    { name: 'Parv Seth',  image: image6 ,contact:'+91 8955122243'},
+    { name: 'Vanshika Bansal', image: image7,contact:'+91 8949929616' },
+    { name: 'Yash Choudhary', image: image8 ,contact:'+91 9358446536'},
   ];
 
   return (
@@ -33,6 +33,7 @@ const Team = () => {
           <div key={index} className="team-member">
             <div className="image-circle" style={{ backgroundImage: `url(${member.image})` }}></div>
             <div className="name">{member.name}</div>
+            <div className="name">{member.contact}</div>
           </div>
         ))}
       </div>
@@ -43,6 +44,7 @@ const Team = () => {
             <div className="role">{member.role}</div>
             <div className="image-circle" style={{ backgroundImage: `url(${member.image})` }}></div>
             <div className="name">{member.name}</div>
+            <div className="name">{member.contact}</div>
           </div>
         ))}
       </div>
