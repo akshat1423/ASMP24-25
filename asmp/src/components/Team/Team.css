@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -122,3 +121,30 @@ body, html {
   text-align: center;
   margin-top: 1vh;
 }
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: center;
+  }
+  100% {
+    background-position: center 10%;
+  }
+}
+
+.team-members {
+  animation: moveBackground 10s linear infinite alternate;
+}
+
