@@ -1,11 +1,19 @@
 
 import './App.css'
 
+
+import Navbar from './components/Navbar/Navbar'
+import TestimonialSlider from './components/TestimonialSlider/Testimonial'
+
+
 function App() {
 
   return (
     <>
-      <div className="text-primary">ASMP</div>
+      
+      <Navbar></Navbar>
+      <div style={{height:'30vh'}}></div>
+      <TestimonialSlider></TestimonialSlider>
     </>
   )
 }
