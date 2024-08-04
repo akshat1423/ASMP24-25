@@ -4,8 +4,7 @@ import NonCoreConsult from "./NonCoreConsult";
 import NonCoreFinance from "./NonCoreFinance";
 import NonCoreSoftware from "./NonCoreSoftware";
 import Core from "./Core";
-import backgroundImage from '../assets/asmp_bg.jpeg';
-import CursorAnimation from "./CursorAnimation";
+import backgroundImage from "../assets/asmp_bg.jpeg";
 
 const Toggle = () => {
   const [selectedOption, setSelectedOption] = useState("core");
@@ -15,7 +14,7 @@ const Toggle = () => {
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
-  
+
   // to toggle between different options in the non-core div
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -23,14 +22,15 @@ const Toggle = () => {
 
   return (
     <>
-      <CursorAnimation />
-      <div style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '100vh',
-        zIndex: -1,
-      }}>
+      <div
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "110vh",
+          zIndex: -1,
+        }}
+      >
         <div className="core-or-noncore-container">
           <div className="switches-container">
             <input
@@ -75,7 +75,9 @@ const Toggle = () => {
             <ul className="toggle-ul">
               <li className="toggle-li">
                 <a
-                  className={`toggle-li-link ${activeTab === "consult" ? "active" : ""}`}
+                  className={`toggle-li-link ${
+                    activeTab === "consult" ? "active" : ""
+                  }`}
                   href="#consult"
                   onClick={() => handleTabClick("consult")}
                 >
@@ -84,7 +86,9 @@ const Toggle = () => {
               </li>
               <li className="toggle-li">
                 <a
-                  className={`toggle-li-link ${activeTab === "analytics" ? "active" : ""}`}
+                  className={`toggle-li-link ${
+                    activeTab === "analytics" ? "active" : ""
+                  }`}
                   href="#analytics"
                   onClick={() => handleTabClick("analytics")}
                 >
@@ -93,7 +97,9 @@ const Toggle = () => {
               </li>
               <li className="toggle-li">
                 <a
-                  className={`toggle-li-link ${activeTab === "finance" ? "active" : ""}`}
+                  className={`toggle-li-link ${
+                    activeTab === "finance" ? "active" : ""
+                  }`}
                   href="#finance"
                   onClick={() => handleTabClick("finance")}
                 >
@@ -102,7 +108,9 @@ const Toggle = () => {
               </li>
               <li className="toggle-li">
                 <a
-                  className={`toggle-li-link ${activeTab === "software" ? "active" : ""}`}
+                  className={`toggle-li-link ${
+                    activeTab === "software" ? "active" : ""
+                  }`}
                   href="#software"
                   onClick={() => handleTabClick("software")}
                 >
@@ -111,7 +119,9 @@ const Toggle = () => {
               </li>
               <li className="toggle-li">
                 <a
-                  className={`toggle-li-link ${activeTab === "others" ? "active" : ""}`}
+                  className={`toggle-li-link ${
+                    activeTab === "others" ? "active" : ""
+                  }`}
                   href="#others"
                   onClick={() => handleTabClick("others")}
                 >
@@ -130,4 +140,4 @@ const Toggle = () => {
   );
 };
 
-export default Toggle
+export default Toggle;
