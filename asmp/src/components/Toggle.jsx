@@ -30,7 +30,7 @@ const Toggle = () => {
         backgroundPosition: 'center',
         height: '100vh',
         zIndex: -1,
-    }}>
+      }}>
         <div className="core-or-noncore-container">
           <div className="switches-container">
             <input
@@ -79,7 +79,7 @@ const Toggle = () => {
                   href="#consult"
                   onClick={() => handleTabClick("consult")}
                 >
-                  Consult
+                  Consult                  
                 </a>
               </li>
               <li className="toggle-li">
@@ -130,4 +130,4 @@ const Toggle = () => {
   );
 };
 
-export default Toggle;
+export default Toggle
