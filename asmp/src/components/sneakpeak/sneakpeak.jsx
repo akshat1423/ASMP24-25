@@ -12,6 +12,7 @@ import { Autoplay,EffectCoverflow, Pagination, Navigation } from 'swiper/modules
 function Sneakpeak() {
   return (
     <div className="container">
+      <br/>
       <h1 className="heading">Sneak Peak</h1>
       <Swiper
         spaceBetween={60}
@@ -23,6 +24,17 @@ function Sneakpeak() {
           }}
         loop={true}
         slidesPerView={2}
+        breakpoints={{
+          1024: {
+            slidesPerView: 2, // 3 slides for large screens
+          },
+          768: {
+            slidesPerView: 1, // 1 slide for medium screens
+          },
+          576: {
+            slidesPerView: 1, // 1 slide for small screens
+          },
+        }}
         modules={[Autoplay,EffectCoverflow, Pagination, Navigation]}
         navigation={{
           nextEl: '.swiper-button-next',

@@ -11,7 +11,7 @@ body {
   padding: 0;
   min-height: 100vh;
   width: 100%;
-  background-image: url('C:/Users/Khushi Yadav/Desktop/react/ASMP24-25/asmp/src/assets/ArtStation - Explore.jpeg'); /* Path to your background image */
+  background-image: url('./ArtStation - Explore.jpeg'); /* Path to your background image */
   background-size: cover; /* Ensures background image covers the entire screen */
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Prevents the background image from repeating */
@@ -50,6 +50,7 @@ body {
   height: auto;
   display: block;
   color: #fff;
+  font-size: medium;
 }
 
 .event-title {
