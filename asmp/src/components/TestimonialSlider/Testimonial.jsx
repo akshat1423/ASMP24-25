@@ -112,6 +112,7 @@ const styles = {
     fontSize: '1em',
     color: '#555',
   },
+
 };
 
 export default TestimonialSlider;

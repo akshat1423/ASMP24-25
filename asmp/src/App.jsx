@@ -11,8 +11,8 @@ import {
 import Register from './components/register.jsx';
 import Login from './components/login.jsx';import React from 'react';
 import './App.css';
-import Sneakpeak from './components/sneakpeak/sneakpeak';
-import EventImages from './components/events/events';
+// import Sneakpeak from './components/sneakpeak/sneakpeak';
+// import EventImages from './components/events/events';
 import Profile from './components/Profile'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Homee from './components/UltimateHome/Homee.jsx';
@@ -32,8 +32,8 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/toggle" element={<Toggle />} />
-      <Route path="/events" element={<EventImages />} />
-      <Route path="/sneakpeak" element={<Sneakpeak/>} />
+      {/* <Route path="/events" element={<EventImages />} /> */}
+      {/* <Route path="/sneakpeak" element={<Sneakpeak/>} /> */}
 
 
 

@@ -113,9 +113,6 @@
   }
 
   @media (max-width: 768px) {
-    * {
-      overflow-x: hidden;
-    }
     .switch div {
       padding: auto;
       position: absolute;
@@ -124,9 +121,6 @@
     }
   }
   @media (max-width: 600px) {
-    * {
-      overflow-x: hidden;
-    }
     .switch div {
       padding: auto;
       position: absolute;
