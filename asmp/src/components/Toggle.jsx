@@ -5,6 +5,7 @@ import NonCoreFinance from "./NonCoreFinance";
 import NonCoreSoftware from "./NonCoreSoftware";
 import Core from "./Core";
 import backgroundImage from "../assets/asmp_bg.jpeg";
+import CursorAnimation from "./CursorAnimation";
 
 const Toggle = () => {
   const [selectedOption, setSelectedOption] = useState("core");
@@ -16,14 +17,16 @@ const Toggle = () => {
   };
 
   // to toggle between different options in the non-core div
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab, event) => {
+    event.preventDefault();
     setActiveTab(tab);
   };
 
   return (
     <>
-      <div
-        style={{
+      <CursorAnimation />      
+        <div
+          style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -31,6 +34,7 @@ const Toggle = () => {
           zIndex: -1,
         }}
       >
+        <div style={{ height: "10vh" }}></div>
         <div className="core-or-noncore-container">
           <div className="switches-container">
             <input
@@ -79,9 +83,9 @@ const Toggle = () => {
                     activeTab === "consult" ? "active" : ""
                   }`}
                   href="#consult"
-                  onClick={() => handleTabClick("consult")}
+                  onClick={(e) => handleTabClick("consult", e)}
                 >
-                  Consult                  
+                  Consult
                 </a>
               </li>
               <li className="toggle-li">
@@ -90,7 +94,7 @@ const Toggle = () => {
                     activeTab === "analytics" ? "active" : ""
                   }`}
                   href="#analytics"
-                  onClick={() => handleTabClick("analytics")}
+                  onClick={(e) => handleTabClick("analytics", e)}
                 >
                   Analytics
                 </a>
@@ -101,7 +105,7 @@ const Toggle = () => {
                     activeTab === "finance" ? "active" : ""
                   }`}
                   href="#finance"
-                  onClick={() => handleTabClick("finance")}
+                  onClick={(e) => handleTabClick("finance", e)}
                 >
                   Finance
                 </a>
@@ -112,7 +116,7 @@ const Toggle = () => {
                     activeTab === "software" ? "active" : ""
                   }`}
                   href="#software"
-                  onClick={() => handleTabClick("software")}
+                  onClick={(e) => handleTabClick("software", e)}
                 >
                   IT/Software
                 </a>
@@ -123,7 +127,7 @@ const Toggle = () => {
                     activeTab === "others" ? "active" : ""
                   }`}
                   href="#others"
-                  onClick={() => handleTabClick("others")}
+                  onClick={(e) => handleTabClick("others", e)}
                 >
                   Product Management
                 </a>

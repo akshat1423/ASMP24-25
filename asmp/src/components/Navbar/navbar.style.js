@@ -1,6 +1,5 @@
 import styled,{keyframes} from 'styled-components'
 
-
 export const NavbarContainer = styled.nav`
   display: flex;
   flex-direction: column;
@@ -14,19 +13,18 @@ export const NavbarContainer = styled.nav`
   z-index: 1000;
 `;
 
-export const NavbarInnerContainer =styled.div`
-height:100%;
-width:100%;
-display: flex;
-`
+export const NavbarInnerContainer = styled.div`
+  height:100%;
+  width:100%;
+  display: flex;
+`;
 
 export const LeftContainer = styled.div`
-     display: flex;
-     justify-content: center;
-     /* background-color: #125; */
-     height: 100%;
-     width: 12%;
-
+  display: flex;
+  justify-content: center;
+  /* background-color: #125; */
+  height: 100%;
+  width: 12%;
 
   img {
     max-width: 100%; /* Ensure the logo scales with the container width */
@@ -36,86 +34,84 @@ export const LeftContainer = styled.div`
     object-fit: contain; /* Ensure logo fits within its container */
   }
 
-@media (max-width: 1050px){
-  width: 15%;
-}
+  @media (max-width: 1050px){
+    width: 15%;
+  }
 
-@media (max-width: 600px){
-  width: 18%;
-}
+  @media (max-width: 600px){
+    width: 18%;
+  }
 
-@media (max-width: 490px){
-  width: 19%;
-}
-`
+  @media (max-width: 490px){
+    width: 19%;
+  }
+`;
 
 export const MiddleContainer = styled.div`
-     display: flex;
-     justify-content: center;
-     /* background-color: #105; */
-     height: 100%;
-     width: 78%;
+  display: flex;
+  justify-content: center;
+  /* background-color: #105; */
+  height: 100%;
+  width: 78%;
 
-     @media (max-width: 1050px){
-        width: 75%;
-     }
-        @media (max-width: 600px){
-  width: 70%;
-}
+  @media (max-width: 1050px){
+    width: 75%;
+  }
+  @media (max-width: 600px){
+    width: 70%;
+  }
 
-@media (max-width: 490px){
-  width: 67%;
-}
-
-
-`
+  @media (max-width: 490px){
+    width: 67%;
+  }
+`;
 
 export const MiddleInnerContainer = styled.div`
-     display: flex;
-     justify-content: space-evenly;
-     align-items: center;
-     height: 100%;
-     width: 100%;
-     text-decoration: none;
-     list-style-type: none;
-     color: white;
-     font-size: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  list-style-type: none;
+  color: white;
+  font-size: 1.5rem;
 
-     li:hover{
-        color: greenyellow;
-        font-weight: 450;
-     }
+  li:hover{
+    color: greenyellow;
+    font-weight: 450;
+  }
 
-     .selected{
-        color: greenyellow;
-     }
+  .selected{
+    color: greenyellow;
+  }
 
 
-     @media (max-width: 1050px){
-  font-size: 1.4rem;
-}
+  @media (max-width: 1050px){
+    font-size: 1.4rem;
+  }
 
-     @media (max-width: 950px){
-  display: none;
-}
-     `
+  @media (max-width: 950px){
+    display: none;
+  }
+`;
 
 export const RightContainer = styled.div`
-     height: 100%;
-     width: 10%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     color: white;
-     font-size: 2rem;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
 
-     @media (max-width: 600px){
-  width: 12%;
-}
+  @media (max-width: 600px){
+    width: 12%;
+  }
 
-@media (max-width: 490px){
-  width: 15%;
-}
+  @media (max-width: 490px){
+    width: 15%;
+  }
 `
 
 
@@ -178,7 +174,6 @@ export const NavbarExtendedContainer = styled.div`
     clip-path: polygon(0% 10%, 100% 0%, 100% 85%, 0% 100%);
     z-index: -1;
   }
-
 
   @media (max-width: 1100px) {
     height: 600px;
