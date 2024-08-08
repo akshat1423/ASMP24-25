@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { Spin as Hamburger } from "hamburger-react";
-
+import logo from '../../assets/images/Sarc.png';
 import {
   NavbarContainer,
   LeftContainer,
@@ -12,18 +12,17 @@ import {
   NavbarExtendedContainer,
 } from "./navbar.style";
 
-import logo from '../../assets/images/Sarc.png';
 
 export default function Navbar(params) {
   const [selectedItem, setSelectedItem] = useState(null); // State to track selected item
   const [isOpen, setOpen] = useState(false); // State to track hamburger menu open/close
 
   const navigationItems = [
-    { name: "Sneak Peeks", to: "sneakPeeks", className: "sneakPeeks" },
-    { name: "Events", to: "events", className: "events" },
-    { name: "Testimonial", to: "testimonials", className: "testimonials" },
-    { name: "FAQ", to: "faq", className: "faq" },
-    { name: "Team", to: "team", className: "team" },
+    { name: "Sneak Peeks", to: "sneakPeeks", className: "sneakPeeks", id: "sneakPeeks" },
+    { name: "Events", to: "events", className: "events", id: "events" },
+    { name: "Testimonial", to: "testimonials", className: "testimonials", id: "testimonials" },
+    { name: "FAQ", to: "faq", className: "faq", id: "faq" },
+    { name: "Team", to: "team", className: "team", id: "team" },
   ];
 
   const handleClick = (name) => {
