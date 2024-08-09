@@ -4,15 +4,17 @@
   width: 100%;
   height: 4px;
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
 
 }
 
 .swiper-pagination-bullet {
-  width: 100px;
-  height: 4px;
+  /* width: 100px; */
+  width: 6px;
+  height: 6px;
   background: rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
   margin: 0 4px;
@@ -21,8 +23,9 @@
 
 .swiper-pagination-bullet-active {
   background:#52aeba;
-  height: 4px; /* Ensuring active bullets are rectangular */
-  border-radius: 0; /* Ensure no rounded corners */
+  height: 6px; /* Ensuring active bullets are rectangular */
+  width: 6px;
+  border-radius: 50%; /* Ensure no rounded corners */
 }
 
 .swiper{

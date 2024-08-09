@@ -17,13 +17,17 @@ import Profile from './components/Profile'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Homee from './components/UltimateHome/Homee.jsx';
 import Toggle from './components/Toggle'
+import Line from "./components/Line/Line.jsx";
+import Fakeheader from "./Fakeheader/Fakeheader.jsx";
 
 function App() {
   return (
     
      <>
       <Navbar></Navbar>
-   
+      
+      {/* <Line></Line> */}
+    
     <Router>
     <Routes>
     <Route path='' element={<Homee></Homee>}></Route>
