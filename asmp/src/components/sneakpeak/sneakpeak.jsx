@@ -13,6 +13,7 @@ function Sneakpeak() {
   return (
     <div className="container">
       <br/>
+      <br/>
       <h1 className="heading">Sneak Peak</h1>
       <Swiper
         spaceBetween={60}
@@ -83,7 +84,7 @@ function Sneakpeak() {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <h4><b>Co-founder & CTO - Velocity Anhhgghggvcdf hhdfjdshdjkeshdjehdjedjhjhj</b></h4>
+          <h4><b>Co-founder & CTO - Velocity </b></h4>
           <h6><b>Mumbai</b></h6>
           <p className="mohit">Energy Science & Engineering, 2014</p>
           <Link to="/Login">

@@ -19,6 +19,8 @@ import Homee from './components/UltimateHome/Homee.jsx';
 import Toggle from './components/Toggle'
 import Line from "./components/Line/Line.jsx";
 import Fakeheader from "./Fakeheader/Fakeheader.jsx";
+import Sneakpeak from './components/sneakpeak/sneakpeak';
+import EventImages from './components/events/events';
 
 function App() {
   return (
@@ -36,8 +38,8 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/toggle" element={<Toggle />} />
-      {/* <Route path="/events" element={<EventImages />} /> */}
-      {/* <Route path="/sneakpeak" element={<Sneakpeak/>} /> */}
+      <Route path="/events" element={<EventImages />} /> 
+      <Route path="/sneakpeak" element={<Sneakpeak/>} /> 
 
 
 
