@@ -8,8 +8,8 @@ const Footer = () => {
         <div className="asmp-footer">
             <p>Made with ❤️ by SARC</p>
             <div className="social-links">
-                <ul>
-                    <li>
+                <ul className='footer-ul'>
+                    <li className='footer-li'>
                     <a href="https://www.facebook.com/SARC.IITB/" target="_blank" rel="noopener noreferrer">
                         <span></span>
                         <span></span>
@@ -18,7 +18,7 @@ const Footer = () => {
                         <span className="fa-brands fa-facebook"></span>
                     </a>
                     </li>
-                    <li>
+                    <li className='footer-li'>
                     <a href="https://www.youtube.com/c/SARCIITBombay" target="_blank" rel="noopener noreferrer">
                         <span></span>
                         <span></span>
@@ -27,7 +27,7 @@ const Footer = () => {
                         <span className="fa-brands fa-youtube"></span>
                     </a>
                     </li>
-                    <li>
+                    <li className='footer-li'>
                     <a href="https://www.instagram.com/sarc_iitb/?hl=en" target="_blank" rel="noopener noreferrer">
                         <span></span>
                         <span></span>
@@ -36,7 +36,7 @@ const Footer = () => {
                         <span className="fa-brands fa-instagram"></span>
                     </a>
                     </li>
-                    <li>
+                    <li className='footer-li'>
                     <a href="https://www.linkedin.com/in/sarciitb/?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
                         <span></span>
                         <span></span>

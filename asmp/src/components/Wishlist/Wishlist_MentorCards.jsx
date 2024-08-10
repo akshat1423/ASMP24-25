@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./MentorCard.css";
+import "./Wishlist_MentorCards.css";
 
 const MentorCard = ({ mentor }) => {
   const [clicked, setClicked] = useState(false);
@@ -110,7 +110,7 @@ const MentorCard = ({ mentor }) => {
             }}
             onClick={handleClick}
           >
-            Add to Wishlist {clicked ? "\u2691" : "\u2690"}
+            Remove from Wishlist {clicked ? "\u2690" : "\u2691"}
           </p>
         </div>
       </div>

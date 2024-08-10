@@ -1,13 +1,11 @@
-.container {
+.sneakpeak-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
   border-radius: 10px;
-}
-body{
   background-image: url('./ArtStation - Explore.jpeg');
 }
-/* Heading styling */
+
 .heading {
   text-align: center;
   color: #fff;

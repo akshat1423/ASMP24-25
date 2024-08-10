@@ -11,14 +11,14 @@
     text-align: center;
 }
 
-ul {
+.footer-ul {
   position: relative;
   display: flex;
   transform: rotate(0deg) skew(0deg);
   transform-style: preserve-3d;
 }
 
-ul li {
+.footer-li {
   position: relative;
   list-style: none;
   width: 60px;
@@ -26,7 +26,7 @@ ul li {
   margin: 0 20px;
 }
 
-ul li:before {
+.footer-li:before {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -38,7 +38,7 @@ ul li:before {
   transform: skewX(-41deg);
 }
 
-ul li:after {
+.footer-li:after {
   content: '';
   position: absolute;
   top: 5px;
@@ -50,7 +50,7 @@ ul li:after {
   transform: skewY(-49deg);
 }
 
-ul li span {
+.footer-li span {
   position: absolute;
   top: 0;
   left: 0;
@@ -65,50 +65,50 @@ ul li span {
   transition: 1.5s ease-out;
 }
 
-ul li:hover span {
+.footer-li:hover span {
   z-index: 1000;
   transition: .3s;
   color: #fff;
   box-shadow: -1px 1px 1px rgba(0, 0, 0, .5);
 }
 
-ul li:hover span:nth-child(5) {
+.footer-li:hover span:nth-child(5) {
   transform: translate(40px, -40px);
   opacity: 1;
 }
 
-ul li:hover span:nth-child(4) {
+.footer-li:hover span:nth-child(4) {
   transform: translate(30px, -30px);
   opacity: .8;
 }
 
-ul li:hover span:nth-child(3) {
+.footer-li:hover span:nth-child(3) {
   transform: translate(20px, -20px);
   opacity: .6;
 }
 
-ul li:hover span:nth-child(2) {
+.footer-li:hover span:nth-child(2) {
   transform: translate(10px, -10px);
   opacity: .4;
 }
 
-ul li:hover span:nth-child(1) {
+.footer-li:hover span:nth-child(1) {
   transform: translate(0px, 0px);
   opacity: .2;
 }
 
-ul li:nth-child(1):hover span {
+.footer-li:nth-child(1):hover span {
   background: #1877F2 !important; /* facebook */
 }
 
-ul li:nth-child(2):hover span {
+.footer-li:nth-child(2):hover span {
   background: #ff0000 !important; /* youtube */
 }
 
 /* ul li:nth-child(3):hover span {
   background: #C13584 !important;
 } */
-ul li:nth-child(3):hover span { 
+.footer-li:nth-child(3):hover span { 
     background-image: url('C:\Web Development\ASMP24-25\asmp\src\assets\insta.png');
     background-size: cover;
     background-position: center;
@@ -116,6 +116,6 @@ ul li:nth-child(3):hover span {
     background-color: transparent;
 }  /* instagram */
 
-ul li:nth-child(4):hover span {
+.footer-li:nth-child(4):hover span {
   background: #0077B5 !important; /* linkedin */
 }

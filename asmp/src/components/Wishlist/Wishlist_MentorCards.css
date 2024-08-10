@@ -1,0 +1,14 @@
+.card {
+    transition: all 0.3s ease; /* Smooth transition for responsiveness */
+  }
+  
+  @media (max-width: 1000px) {
+    .card {
+      max-width: 100%; /* Full width on smaller screens */
+      margin: 0 auto; /* Center the card */
+    }
+  
+    .card-header {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+  }  
