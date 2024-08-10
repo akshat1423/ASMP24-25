@@ -5,6 +5,10 @@
   }
   
   .abt {
+    display: flex;             
+    justify-content: center;  
+    align-items: center;       
+    height: 35vh;
     text-align: center;
   }
   
@@ -15,7 +19,6 @@
     object-fit: contain; 
     padding: 3% 5%; 
   }
-  
   #about {
     margin-top: 2%;
     font-family: Fraunces, serif;
