@@ -76,10 +76,10 @@ const Toggle = () => {
         {selectedOption === "noncore" && (
           <div id="noncoreDiv">
             {/* Non-core tabs*/}
-            <ul className="toggle-ul">
-              <li className="toggle-li">
+            <ul className="toggle-ul-noncore">
+              <li className="toggle-li-noncore">
                 <a
-                  className={`toggle-li-link ${
+                  className={`toggle-li-link-noncore ${
                     activeTab === "consult" ? "active" : ""
                   }`}
                   href="#consult"
@@ -88,9 +88,9 @@ const Toggle = () => {
                   Consult
                 </a>
               </li>
-              <li className="toggle-li">
+              <li className="toggle-li-noncore">
                 <a
-                  className={`toggle-li-link ${
+                  className={`toggle-li-link-noncore ${
                     activeTab === "analytics" ? "active" : ""
                   }`}
                   href="#analytics"
@@ -99,9 +99,9 @@ const Toggle = () => {
                   Analytics
                 </a>
               </li>
-              <li className="toggle-li">
+              <li className="toggle-li-noncore">
                 <a
-                  className={`toggle-li-link ${
+                  className={`toggle-li-link-noncore ${
                     activeTab === "finance" ? "active" : ""
                   }`}
                   href="#finance"
@@ -110,9 +110,9 @@ const Toggle = () => {
                   Finance
                 </a>
               </li>
-              <li className="toggle-li">
+              <li className="toggle-li-noncore">
                 <a
-                  className={`toggle-li-link ${
+                  className={`toggle-li-link-noncore ${
                     activeTab === "software" ? "active" : ""
                   }`}
                   href="#software"
@@ -121,9 +121,9 @@ const Toggle = () => {
                   IT/Software
                 </a>
               </li>
-              <li className="toggle-li">
+              <li className="toggle-li-noncore">
                 <a
-                  className={`toggle-li-link ${
+                  className={`toggle-li-link-noncore ${
                     activeTab === "others" ? "active" : ""
                   }`}
                   href="#others"

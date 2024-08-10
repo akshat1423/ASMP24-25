@@ -1,12 +1,16 @@
-.container {
+.sneakpeak-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
   border-radius: 10px;
-}
-body{
+  min-height: 100vh;
+  min-width: 100%;
   background-image: url('./ArtStation - Explore.jpeg');
+  background-size: cover; /* Ensures background image covers the entire screen */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
 }
+
 /* Heading styling */
 .heading {
   text-align: center;
@@ -32,7 +36,7 @@ body{
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 /* Card text styling */
@@ -74,7 +78,7 @@ body{
 
 @media (max-width: 900px) {
   .swiper-slide {
-    padding: 10px;
+    /* padding: 10px; */
   }
 
   .heading {

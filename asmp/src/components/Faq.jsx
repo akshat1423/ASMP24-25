@@ -2,42 +2,6 @@ import React, { useState } from "react";
 import "./Faq.css";
 import Accordion from "react-bootstrap/Accordion";
 
-const FAQItem = ({ question, answer, isOpen, toggleFAQ }) => {
-  return (
-    <div className="p-3 font-fraunces">
-      <div
-        className="font-normal text-2xl my-4 w-10/12 flex justify-between items-center"
-        onClick={toggleFAQ}
-      >
-        <span className="cursor-pointer">{question}</span>
-        {!isOpen && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width={44}
-            height={44}
-            color={"#ffffff"}
-            fill={"white"}
-          >
-            <path
-              d="M12 4V20M20 12H4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        )}
-      </div>
-      {isOpen && (
-        <div className="font-normal text-xl my-5 w-10/12">{answer}</div>
-      )}
-
-      <div className="border-1 w-10/12"></div>
-    </div>
-  );
-};
-
 const FAQs = () => {
   const faqsData = [
     {
@@ -66,17 +30,8 @@ const FAQs = () => {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(null);
-  const toggleFAQ = (index) => {
-    if (activeIndex === index) {
-      setActiveIndex(null);
-    } else {
-      setActiveIndex(index);
-    }
-  };
-
   return (
-    <div className="bg-[url('https://s3-alpha-sig.figma.com/img/3aea/7cc0/4a88f35f3195ab75b4a4319ee848c502?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WnEDAz6TCloCnfy6FXeG9Q0CInhTBWDHXsb6Jucw8dCQnrHTDK1cxgs~O-wx-TNulMKTNYpZgHsgzGIAy-vUtyTMW0FDY0A2J3JxJ3FFVwS8Spt9w-tBgW4Sz5efPzTxaa4Jcm4pLnWC1bYTeWTKNqU3yTVJpeoWOVhe4AQRdcM4KffUA9vf~UV8wDrmIUYkBpoxHce-uzus66qXP3ulgjP15WZZXmQvDuIzvUbOASlw8JPmw1PEt9yVaAotMGACk3HZW1GMwljE83nlYEAvoRvzBq1GkXp9D-BMvqnKxhVO7ko1iimZXSrhh2UwPn7pqOTeZ-Vt2KrEAyXnoAM3-g__')] bg-cover">
+    <div id="faq" className="bg-[url('https://s3-alpha-sig.figma.com/img/3aea/7cc0/4a88f35f3195ab75b4a4319ee848c502?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WnEDAz6TCloCnfy6FXeG9Q0CInhTBWDHXsb6Jucw8dCQnrHTDK1cxgs~O-wx-TNulMKTNYpZgHsgzGIAy-vUtyTMW0FDY0A2J3JxJ3FFVwS8Spt9w-tBgW4Sz5efPzTxaa4Jcm4pLnWC1bYTeWTKNqU3yTVJpeoWOVhe4AQRdcM4KffUA9vf~UV8wDrmIUYkBpoxHce-uzus66qXP3ulgjP15WZZXmQvDuIzvUbOASlw8JPmw1PEt9yVaAotMGACk3HZW1GMwljE83nlYEAvoRvzBq1GkXp9D-BMvqnKxhVO7ko1iimZXSrhh2UwPn7pqOTeZ-Vt2KrEAyXnoAM3-g__')] bg-cover cursor-auto">
       <div className="font-fraunces text-6xl font-bold mx-5 p-4 opacity-90 text-white">
         FAQ's
       </div>
