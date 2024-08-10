@@ -12,6 +12,8 @@ import Homee from "./components/UltimateHome/Homee.jsx";
 import Toggle from "./components/Toggle";
 import WishList from "./components/Wishlist/Wishlist.jsx";
 
+
+
 function App() {
   return (
     <>
@@ -27,6 +29,7 @@ function App() {
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/events" element={<EventImages />} />
           <Route path="/sneakpeak" element={<Sneakpeak />} />
+         
         </Routes>
       </Router>
     </>
