@@ -7,7 +7,24 @@
   .abt {
     text-align: center;
   }
+  .button-link {
+    text-decoration: none; /* Remove underline from the link */
+  }
+  .events-button {
+    display: block;             
+    margin: 0 auto; 
+    align-items: center;           
+    /* background-color:  #D9D9D961;  */
+    color: white;               
+    border: 2px solid white;    
+    padding: 6px 20px;       
+    cursor: pointer;            
+    transition: background-color 0.3s ease; 
+  }
   
+  .events-button:hover {
+    background-color: green;    
+  }
   .abt img {
     max-width: 100%; 
     height: auto; 

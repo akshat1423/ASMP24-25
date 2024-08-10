@@ -5,12 +5,14 @@ export const NavbarContainer = styled.nav`
   flex-direction: column;
   height: 10vh;
   width: 100vw;
-  background-color: rgba(40, 40, 40, 0.8); /* Grey-blackish translucent background */
+  /* background-color: rgba(40, 40, 40, 0.8); Grey-blackish translucent background */
   position: fixed;
   top: 0;
   left: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  border-bottom: 5px;
+  border-bottom: white;
 `;
 
 export const NavbarInnerContainer = styled.div`

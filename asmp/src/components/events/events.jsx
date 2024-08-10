@@ -19,6 +19,7 @@ const EventImages = () => {
     <div className='main-container-events'>
       <br/>
       <br/>
+      <br/>
       <h1 className='heading'>Events</h1>
     <div className="event-images-container">
       {events.map((event, index) => (
