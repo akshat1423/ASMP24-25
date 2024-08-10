@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import './Events.css'; // Import the CSS file for styling
+import './Events.css';
 
 const EventImages = () => {
   const [activeIndex, setActiveIndex] = useState(null);
  
-
   const events = [
     { id: 1, title: 'Break the ice', imgSrc: '/images/231cf09f73eeb4c07c7bb2f35dda633a 1.png', description: 'Alumni Student Mentoring Program (ASMP) is an initiative by Student Alumni Relations Cell (SARC) with an objective of creating a platform to foster relationships between alumni mentors and students that last forever. ASMP achieves this aim by bringing together alumni mentors and student mentees through various events to help form a rapport and strengthen the connection between them, thus enhancing the IITB Alumni networ' },
     { id: 2, title: 'Shadow program', imgSrc:   '/images/231cf09f73eeb4c07c7bb2f35dda633a 1.png', description: 'Alumni Student Mentoring Program (ASMP) is an initiative by Student Alumni Relations Cell (SARC) with an objective of creating a platform to foster relationships between alumni mentors and students that last forever. ASMP achieves this aim by bringing together alumni mentors and student mentees through various events to help form a rapport and strengthen the connection between them, thus enhancing the IITB Alumni networ' },
     { id: 3, title: 'Tansverse mentoring', imgSrc:   '/images/231cf09f73eeb4c07c7bb2f35dda633a 1.png', description: 'Alumni Student Mentoring Program (ASMP) is an initiative by Student Alumni Relations Cell (SARC) with an objective of creating a platform to foster relationships between alumni mentors and students that last forever. ASMP achieves this aim by bringing together alumni mentors and student mentees through various events to help form a rapport and strengthen the connection between them, thus enhancing the IITB Alumni networ' },
     { id: 4, title: 'group mentoring', imgSrc:  '/images/231cf09f73eeb4c07c7bb2f35dda633a 1.png', description: 'Alumni Student Mentoring Program (ASMP) is an initiative by Student Alumni Relations Cell (SARC) with an objective of creating a platform to foster relationships between alumni mentors and students that last forever. ASMP achieves this aim by bringing together alumni mentors and student mentees through various events to help form a rapport and strengthen the connection between them, thus enhancing the IITB Alumni networ' },
-    // Add more events as needed
   ];
 
   const handleClick = (index) => {
@@ -18,7 +16,8 @@ const EventImages = () => {
   };
 
   return (
-    <div className='main-container'>
+    <div className='main-container-events'>
+      <br/>
       <br/>
       <br/>
       <h1 className='heading'>Events</h1>
