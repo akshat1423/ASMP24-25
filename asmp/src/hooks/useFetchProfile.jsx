@@ -14,6 +14,7 @@ const UseFetchProfile = () => {
 
         try {
             // const accessToken = localStorage.getItem('accessToken');
+            // const accessToken = localStorage.getItem('accessToken');
 
             const response = await axios.get(`http://127.0.0.1:8000/api/authentication/profile/`, {
                 // params: {

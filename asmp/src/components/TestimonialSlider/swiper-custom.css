@@ -4,17 +4,17 @@
   width: 100%;
   height: 4px;
   display: flex;
-  /* justify-content: space-evenly; */
-  justify-content: center;
+  justify-content: space-evenly;
+  /* justify-content: center; */
   align-items: center;
   margin-top: 20px;
 
 }
 
 .swiper-pagination-bullet {
-  /* width: 100px; */
-  width: 6px;
-  height: 6px;
+  width: 100px;
+  /* width: 4px; */
+  height: 4px;
   background: rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
   margin: 0 4px;
@@ -23,9 +23,9 @@
 
 .swiper-pagination-bullet-active {
   background:#52aeba;
-  height: 6px; /* Ensuring active bullets are rectangular */
-  width: 6px;
-  border-radius: 50%; /* Ensure no rounded corners */
+  height: 4px; /* Ensuring active bullets are rectangular */
+  /* width: 4px; */
+  border-radius: 0; /* Ensure no rounded corners */
 }
 
 .swiper{
@@ -34,4 +34,15 @@
 
 .swiper-button-next, .swiper-button-prev{
   color: black;
+}
+.testimonal-content {
+  height: 100%;
+  width: 65%;
+  color: black;
+  text-align: justify;
+  padding: 2%;
+  font-size: 60%;
+  font-family: sans-serif;
+line-height: 120%;
+
 }

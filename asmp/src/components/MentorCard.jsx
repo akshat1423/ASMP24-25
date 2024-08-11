@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./MentorCard.css";
 
-const MentorCard = ({ mentor }) => {
+const MentorCard = ({ workprofile, company, experience, graduation_year }) => {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
@@ -36,7 +36,7 @@ const MentorCard = ({ mentor }) => {
             border: "5px solid white",
             borderRadius: "25px",
             boxSizing: "border-box",
-            pointerEvents: "none", // Make sure overlay doesn't block clicks
+            pointerEvents: "none",
           }}
         ></div>
         <div
@@ -60,7 +60,7 @@ const MentorCard = ({ mentor }) => {
               fontSize: "20px",
             }}
           >
-            {mentor.workprofile}
+            {workprofile}
           </div>
           <div
             className="card-header"
@@ -73,7 +73,7 @@ const MentorCard = ({ mentor }) => {
               fontSize: "25px",
             }}
           >
-            {mentor.company}
+            {company}
           </div>
         </div>
         <div
@@ -84,13 +84,13 @@ const MentorCard = ({ mentor }) => {
             className="card-text"
             style={{ textAlign: "left", color: "#D9CDB3" }}
           >
-            Experience: {mentor.experience}
+            Experience: {experience}
           </p>
           <p
             className="card-text"
             style={{ textAlign: "left", color: "#D9CDB3" }}
           >
-            Graduation year: {mentor.graduation_year}
+            Graduation year: {graduation_year}
           </p>
         </div>
         <div

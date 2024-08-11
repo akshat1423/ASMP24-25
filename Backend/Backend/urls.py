@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# from Mentors import urls
-# from Authentication import urls
-# from Registrations import urls
+from Mentors import urls
+from Authentication import urls
+from Registrations import urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),

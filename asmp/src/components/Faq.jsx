@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect, useRef } from "react";
 import "./Faq.css";
 import Accordion from "react-bootstrap/Accordion";
 
@@ -29,9 +29,32 @@ const FAQs = () => {
       answer: "There might be an issue with webmail due to which you may not be receiving the verification mail. Wait for webmail to be up again and you will be good to go. If you are facing any other issue, contact an ASMP coordinator as soon as possible.",
     },
   ];
+  const faqRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  useEffect(() => {
+    const scrollToFAQ = () => {
+      faqRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.addEventListener('scrollToFaq', scrollToFAQ);
+
+    return () => {
+      window.removeEventListener('scrollToFaq', scrollToFAQ);
+    };
+  }, []);
+
+  const toggleFAQ = (index) => {
+    if (activeIndex === index) {
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(index);
+    }
+  };
 
   return (
-    <div id="faq" className="bg-[url('https://s3-alpha-sig.figma.com/img/3aea/7cc0/4a88f35f3195ab75b4a4319ee848c502?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WnEDAz6TCloCnfy6FXeG9Q0CInhTBWDHXsb6Jucw8dCQnrHTDK1cxgs~O-wx-TNulMKTNYpZgHsgzGIAy-vUtyTMW0FDY0A2J3JxJ3FFVwS8Spt9w-tBgW4Sz5efPzTxaa4Jcm4pLnWC1bYTeWTKNqU3yTVJpeoWOVhe4AQRdcM4KffUA9vf~UV8wDrmIUYkBpoxHce-uzus66qXP3ulgjP15WZZXmQvDuIzvUbOASlw8JPmw1PEt9yVaAotMGACk3HZW1GMwljE83nlYEAvoRvzBq1GkXp9D-BMvqnKxhVO7ko1iimZXSrhh2UwPn7pqOTeZ-Vt2KrEAyXnoAM3-g__')] bg-cover cursor-auto">
+    <div id="faq" ref={faqRef} className="bg-[url('https://s3-alpha-sig.figma.com/img/3aea/7cc0/4a88f35f3195ab75b4a4319ee848c502?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WnEDAz6TCloCnfy6FXeG9Q0CInhTBWDHXsb6Jucw8dCQnrHTDK1cxgs~O-wx-TNulMKTNYpZgHsgzGIAy-vUtyTMW0FDY0A2J3JxJ3FFVwS8Spt9w-tBgW4Sz5efPzTxaa4Jcm4pLnWC1bYTeWTKNqU3yTVJpeoWOVhe4AQRdcM4KffUA9vf~UV8wDrmIUYkBpoxHce-uzus66qXP3ulgjP15WZZXmQvDuIzvUbOASlw8JPmw1PEt9yVaAotMGACk3HZW1GMwljE83nlYEAvoRvzBq1GkXp9D-BMvqnKxhVO7ko1iimZXSrhh2UwPn7pqOTeZ-Vt2KrEAyXnoAM3-g__')] bg-cover">
+      <div style={{height:'10vh'}}></div>
       <div className="font-fraunces text-6xl font-bold mx-5 p-4 opacity-90 text-white">
         FAQ's
       </div>

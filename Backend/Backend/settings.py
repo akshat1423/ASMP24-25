@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-y+y)3punb@h05^!*b3b13$vb*!z*x@fuhdj*9@+v33t7y$95dg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'http://localhost:3001', 'http://localhost:5173']
+ALLOWED_HOSTS = ['*', 'http://localhost:5173']
 
 
 # Application definition
@@ -52,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = "Backend.urls"
@@ -60,7 +61,7 @@ ROOT_URLCONF = "Backend.urls"
 CORS_ALLOW_ALL_ORIGINS = True
 
 
-CSRF_TRUSTED_ORIGINS = ['https://asmp.sarc-iitb.org']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000','http://localhost:5173',]
 
 
 CORS_ALLOW_HEADERS = [

@@ -109,7 +109,7 @@
   background: #C13584 !important;
 } */
 .footer-li:nth-child(3):hover span { 
-    background-image: url('C:\Web Development\ASMP24-25\asmp\src\assets\insta.png');
+    background-image: url('./src/assets/insta.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

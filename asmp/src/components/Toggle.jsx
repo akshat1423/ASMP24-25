@@ -22,18 +22,41 @@ const Toggle = () => {
     setActiveTab(tab);
   };
 
+  const nonCoreTabs = [
+    { id: "analytics", label: "Analytics" },
+    { id: "civil-service", label: "Civil Services/Government of India" },
+    { id: "management-consult", label: "Management Consulting", href: "#consult" },
+    { id: "stratergy-consult", label: "Stratergy Consulting", href: "#consult" },
+    { id: "finance", label: "Finance" ,href:"#finance"},
+    { id: "software", label: "IT/Software" ,href:"#software"},
+    { id: "others", label: "Others" ,href:"#others"},
+    { id: "product-management", label: "Product Management", href: "#others" },
+    {id:"design",label:"Design",href:"#design"},
+    {id:"management",label:"Management",href:"#management"},
+    {id:"marketing",label:"Marketing",href:"#marketing"},
+    {id:"entrepreneurship",label:"Entrepreneurship",href:"#entrepreneurship"},
+  ];
+
+  const coreTabs = [
+    {id:"core-engineering",label:"Core Engineering",href:"#core-engineering"},
+    {id:"research",label:"Research",href:"#research"},
+  ]
+
   return (
     <>
-      <CursorAnimation />      
-        <div
-          style={{
+      <CursorAnimation />
+      <div
+        style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "110vh",
+          backgroundAttachment: "fixed",
+          height:'400vh',
+
           zIndex: -1,
         }}
       >
+        
         <div style={{ height: "10vh" }}></div>
         <div className="core-or-noncore-container">
           <div className="switches-container">
@@ -69,7 +92,15 @@ const Toggle = () => {
         {/* Conditionally rendering coreDiv and noncoreDiv */}
         {selectedOption === "core" && (
           <div id="coreDiv">
-            <Core />
+            <ul className="toggle-ul-core">
+              {coreTabs.map(({ id, label, href = `#${id}` }) => (
+                <li key={id} className="toggle-li-core">
+                  <a className="toggle-li-link-core" href={href}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
 
@@ -77,61 +108,19 @@ const Toggle = () => {
           <div id="noncoreDiv">
             {/* Non-core tabs*/}
             <ul className="toggle-ul-noncore">
-              <li className="toggle-li-noncore">
-                <a
-                  className={`toggle-li-link-noncore ${
-                    activeTab === "consult" ? "active" : ""
-                  }`}
-                  href="#consult"
-                  onClick={(e) => handleTabClick("consult", e)}
-                >
-                  Consult
-                </a>
-              </li>
-              <li className="toggle-li-noncore">
-                <a
-                  className={`toggle-li-link-noncore ${
-                    activeTab === "analytics" ? "active" : ""
-                  }`}
-                  href="#analytics"
-                  onClick={(e) => handleTabClick("analytics", e)}
-                >
-                  Analytics
-                </a>
-              </li>
-              <li className="toggle-li-noncore">
-                <a
-                  className={`toggle-li-link-noncore ${
-                    activeTab === "finance" ? "active" : ""
-                  }`}
-                  href="#finance"
-                  onClick={(e) => handleTabClick("finance", e)}
-                >
-                  Finance
-                </a>
-              </li>
-              <li className="toggle-li-noncore">
-                <a
-                  className={`toggle-li-link-noncore ${
-                    activeTab === "software" ? "active" : ""
-                  }`}
-                  href="#software"
-                  onClick={(e) => handleTabClick("software", e)}
-                >
-                  IT/Software
-                </a>
-              </li>
-              <li className="toggle-li-noncore">
-                <a
-                  className={`toggle-li-link-noncore ${
-                    activeTab === "others" ? "active" : ""
-                  }`}
-                  href="#others"
-                  onClick={(e) => handleTabClick("others", e)}
-                >
-                  Product Management
-                </a>
-              </li>
+              {nonCoreTabs.map(({ id, label, href = `#${id}` }) => (
+                <li key={id} className="toggle-li-noncore">
+                  <a
+                    className={`toggle-li-link-noncore ${
+                      activeTab === id ? "active" : ""
+                    }`}
+                    href={href}
+                    onClick={(e) => handleTabClick(id, e)}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
 
             {activeTab === "consult" && <NonCoreConsult />}

@@ -80,12 +80,12 @@ export const MiddleInnerContainer = styled.div`
   font-size: 1.5rem;
 
   li:hover{
-    color: greenyellow;
+    color: orange;
     font-weight: 450;
   }
 
   .selected{
-    color: greenyellow;
+    color: orange;
   }
 
 
@@ -137,8 +137,8 @@ export const NavbarExtendedContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 5%;
-  height: 700px;
-  width: 700px;
+  height: 600px;
+  width: 600px;
   z-index: 1000;
   background: rgba(0, 0, 0, 0.5); /* Translucent black background */
   border: 0px solid rgba(255, 255, 255, 0.3); /* Light grey border */
@@ -151,6 +151,7 @@ export const NavbarExtendedContainer = styled.div`
   animation: ${slideIn} 0.5s ease-out forwards;
   clip-path: ellipse(0% 0%, 100% 0%, 100% 85%, 0% 100%);
   overflow: hidden;
+  padding-bottom: 5%;
 
   &:before {
     content: "";
@@ -180,11 +181,18 @@ export const NavbarExtendedContainer = styled.div`
   @media (max-width: 1100px) {
     height: 600px;
     width: 600px;
-    gap: 3%;
+    gap: 5%;
+  }
+  @media (max-width: 950px) {
+    height: 750px;
+    width: 750px;
+  padding-bottom: 5%;
+  gap: 1%;
+
   }
   @media (max-width: 800px) {
-    height: 500px;
-    width: 500px;
+    height: 700px;
+    width: 700px;
     gap: 0;
   }
 

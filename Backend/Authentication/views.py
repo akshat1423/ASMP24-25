@@ -32,22 +32,18 @@ class CreateUserAPIView(APIView):
 
 
 class TokenVerification(APIView):
-    def get(self, request, token, format=None):
+    def post(self, request, format=None):
         try:
-            # Retrieve the token from the URL parameter
-            token_object = Token.objects.get(token=token)
-            user = token_object.user
-            if user.is_active:
-                return Response("User already verified", status=status.HTTP_400_BAD_REQUEST)
+            token = Token.objects.get(token=request.data['token'])
+            user = token.user
+            if(user.is_active):
+                return Response("User already verified",status=status.HTTP_400_BAD_REQUEST)
             user.is_active = True
             user.save()
-            return Response("Verification Successful", status=status.HTTP_200_OK)
-        except Token.DoesNotExist:
-            print("Error while verifying token: Token does not exist")
-            return Response("No user found, please signup", status=status.HTTP_400_BAD_REQUEST)
+            return Response("Verificaiton Successful",status=status.HTTP_200_OK)
         except Exception as e:
             print("Error while verifying token", e)
-            return Response("An error occurred", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response("No user found, please signup",status=status.HTTP_400_BAD_REQUEST)
 
 
 class Login(APIView):
@@ -70,7 +66,6 @@ class ProfileView(APIView):
     def get(self, request, format=None):
         # accessToken = request.query_params.get('accessToken')
         accessToken = '17e74470-b9e9-48df-a39b-4df7f89204ae'
-        print("Access Token received", accessToken)
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -180,7 +175,7 @@ def send_sso_mail(
           please click the following link to verify your email address:
         </p>
         <p style="margin-bottom: 10px;">
-          <a href="http://127.0.0.1:8000/api/authentication/verify-user/{token}" style="text-decoration: none; background-color: #007bff; color: #ffffff; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
+          <a href="https://asmp.sarc-iitb.org/verify-user/{token}" style="text-decoration: none; background-color: #007bff; color: #ffffff; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
         </p>
       </div>
     </div>

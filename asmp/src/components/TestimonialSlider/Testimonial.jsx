@@ -1,11 +1,3 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import './swiper-custom.css'; // Import the custom CSS
-import img from './img.jpg'
 
 const testimonials = [
   {
@@ -16,30 +8,61 @@ const testimonials = [
   {
     name: 'Jinisha Sabadra',
     image: 'path-to-image-2.jpg', // Replace with your image path
-    feedback: 'Another long testimonial text goes here...',
+    feedback: 'Industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
   },
   {
     name: 'Jinisha Sabadra',
     image: 'path-to-image-3.jpg', // Replace with your image path
-    feedback: 'Another long testimonial text goes here...',
+    feedback: 'Industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
   },
   {
     name: 'Jinisha Sabadra',
     image: 'path-to-image-4.jpg', // Replace with your image path
-    feedback: 'Another long testimonial text goes here...',
+    feedback: 'Industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
   },
   {
     name: 'Jinisha Sabadra',
     image: 'path-to-image-5.jpg', // Replace with your image path
-    feedback: 'Another long testimonial text goes here...',
+    feedback: 'Industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
   },
   // Add more testimonials as needed
 ];
 
+
+
+
+import React, { useRef, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import './swiper-custom.css';
+import img from './img.png'
+
+// ... existing testimonials array ...
+
 const TestimonialSlider = () => {
-  return (<>
-    <div className="testimonialHeading" style={{color:'black',display:'flex', alignItems:'center',justifyContent:'flex-start', fontSize:'3rem',fontWeight:'500',paddingLeft:'10%'}}>Testimonials</div>
-    <div style={styles.sliderContainer}>
+  const testimonialRef = useRef(null);
+
+  useEffect(() => {
+    const scrollToTestimonial = () => {
+      testimonialRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.addEventListener('scrollToTestimonials', scrollToTestimonial);
+
+    return () => {
+      window.removeEventListener('scrollToTestimonials', scrollToTestimonial);
+    };
+  }, []);
+
+  return (
+    <div ref={testimonialRef} id="testimonials">
+      <div style={{height:'10vh'}}></div>
+
+      <div className="testimonialHeading" style={{color:'black',display:'flex', alignItems:'center',justifyContent:'flex-start', fontSize:'3rem',fontWeight:'500',paddingLeft:'10%'}}>Testimonials</div>
+      <div style={styles.sliderContainer}>
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={50}
@@ -49,7 +72,7 @@ const TestimonialSlider = () => {
         loop={true}
         centeredSlides={true}
         breakpoints={{
-            1050: {
+            1300: {
               slidesPerView: 3,
             },
             750: {
@@ -70,17 +93,19 @@ const TestimonialSlider = () => {
                 <img src={img} alt="" />
 
                     </div>
-                    <div className="testimonal-content" style={{height:'100%',width:'65%',color:'black',textAlign:'justify',padding:'1%',fontSize:'0.9rem',lineHeight:'100%'}}>{testimonial.feedback}</div>
+                    <div className="testimonal-content" >{testimonial.feedback}</div>
                   </div>
                 </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+      </div>
     </div>
-    </>
   );
 };
+
+// ... existing styles object ...
 
 const styles = {
   sliderContainer: {
@@ -88,7 +113,7 @@ const styles = {
     maxWidth: '1500px',
     margin: 'auto',
     padding: '20px 0',
-    height:'40vh'
+    height:'45vh'
   },
   testimonialItem: {
     height:'100%',
@@ -98,8 +123,7 @@ const styles = {
     borderRadius: '0',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     overflow: 'hidden',
-    margin:'0 5%'
-
+    // margin:'0 5%',
   },
   image: {
     width: '150px',

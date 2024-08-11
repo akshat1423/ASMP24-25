@@ -1,6 +1,4 @@
 import { useState, useCallback } from 'react';
-import { json } from 'react-router-dom';
-import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const UseFetchMentors = () => {
@@ -15,47 +13,31 @@ const UseFetchMentors = () => {
         setSuccess(false);
         const userData = {
             // "accessToken": localStorage.getItem('accessToken'),
-            "accessToken": "17e74470-b9e9-48df-a39b-4df7f89204ae",
-        }
+            'accessToken':"17e74470-b9e9-48df-a39b-4df7f89204ae",
+        };
 
         try {
             // Get CSRF token from cookies
             const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
-            const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : 'DUMMY_CSRF_TOKEN';
+            const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : '';
 
-            axios.post(`http://127.0.0.1:8000/api/mentors/${field}/`, userData , {
+            const response = await axios.post(`http://127.0.0.1:8000/api/mentors/${field}/`, userData, {
                 headers: {
                     'Content-Type': 'application/json',
-                    // Include CSRF token in headers
                     'X-CSRFToken': csrfToken,
                 },
-            }).then(async (response) => {
-                if (response.status === 200) {
-                    setSuccess(true);
-                    console.log(response.data)
-                    setMentors(response.data);
-                }
-                if (response.status === 400) {
-                    const jsonData = await response.json();
-                    setError(jsonData['error']);
-                }
-            })
+            });
 
-
-            // const response = await fetch('/api/mentors/', {
-            //     method: 'GET',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //         // Include CSRF token in headers
-            //         'X-CSRFToken': csrfToken,
-            //     },
-            //     body: JSON.stringify(userData),
-            // });
-
-
-
+            if (response.status === 200) {
+                setSuccess(true);
+                console.log(response.data);
+                setMentors(response.data);
+            } else {
+                setError("Unexpected response status");
+            }
         } catch (err) {
-            setError(err.message);
+            // Handle different types of errors
+            setError(err.response?.data?.error || err.message);
         } finally {
             setLoading(false);
         }

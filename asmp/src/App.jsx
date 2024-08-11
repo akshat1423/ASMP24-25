@@ -12,11 +12,14 @@ import Homee from "./components/UltimateHome/Homee.jsx";
 import Toggle from "./components/Toggle";
 import WishList from "./components/Wishlist/Wishlist.jsx";
 
+
+
 function App() {
   return (
     <>
-      <Navbar></Navbar>
+
       <Router>
+      <Navbar></Navbar>
         <Routes>
           <Route path="" element={<Homee></Homee>}></Route>
           <Route path="/team" element={<Team />}></Route>
@@ -26,7 +29,8 @@ function App() {
           <Route path="/toggle" element={<Toggle />} />
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/events" element={<EventImages />} />
-          <Route path="/sneakpeak" element={<Sneakpeak />} />
+          <Route path="/sneakPeeks" element={<Sneakpeak />} />
+         
         </Routes>
       </Router>
     </>
