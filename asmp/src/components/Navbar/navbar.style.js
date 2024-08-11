@@ -80,12 +80,12 @@ export const MiddleInnerContainer = styled.div`
   font-size: 1.5rem;
 
   li:hover{
-    color: greenyellow;
+    color: orange;
     font-weight: 450;
   }
 
   .selected{
-    color: greenyellow;
+    color: orange;
   }
 
 

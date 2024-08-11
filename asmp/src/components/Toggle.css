@@ -129,6 +129,48 @@
     }
   }
 /*************************************************************************************/
+
+.toggle-ul-core {
+  list-style-type: none;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.toggle-li-core {
+  flex: 1 1 auto; /* Allows the list items to grow and shrink */
+  text-align: center;
+  margin: 5px;
+}
+
+.toggle-li-link-core {
+  text-align: center;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #D9CDB3;
+  background-color: #245331;
+  border: 1px solid transparent;
+  border-radius: 17px;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1.3rem;
+}
+
+/* Hover effect */
+.toggle-li-link-core:hover {
+  background-color: #D9CDB3;
+  color: #245331;
+}
+
+/* Active state */
+.toggle-li-link-core.active {
+  background-color: #D9CDB3;
+  color: #245331;
+}
   .toggle-ul-noncore {
     list-style-type: none;
     padding: 0;

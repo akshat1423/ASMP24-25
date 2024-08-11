@@ -35,3 +35,14 @@
 .swiper-button-next, .swiper-button-prev{
   color: black;
 }
+.testimonal-content {
+  height: 100%;
+  width: 65%;
+  color: black;
+  text-align: justify;
+  padding: 2%;
+  font-size: 60%;
+  font-family: sans-serif;
+line-height: 120%;
+
+}
