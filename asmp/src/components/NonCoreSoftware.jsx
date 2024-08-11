@@ -3,6 +3,9 @@ import { mentorsListSoftware } from '../data/noncore_software';
 import MentorCard from './MentorCard';
 
 const NonCoreSoftware = () => {
+   
+
+
   return (
     <div className="bs-example" style={{ backgroundColor: 'transparent' }}>
       <div className="tab-content">
