@@ -53,6 +53,7 @@ const Wishlist_MentorCard = ({ mentor, mentors, setMentors }) => {
           fontFamily: "'Libre Bodoni', serif",
           position: "relative",
           overflow: "hidden",
+          marginBottom: "4rem"
         }}
       >
         <div

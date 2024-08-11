@@ -123,7 +123,8 @@ class RegistrationAPIView(APIView):
 
 class WishListAPIView(APIView):
     def post(self, request):
-        accessToken = request.data['accessToken']        
+        # accessToken = request.data['accessToken']
+        accessToken = "184b1568-7e1b-4a92-a811-02e91f496510"       
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -148,7 +149,8 @@ class WishListAPIView(APIView):
     
     def get(self, request):
         try:
-            accessToken = request.query_params.get('accessToken')
+            # accessToken = request.query_params.get('accessToken')
+            accessToken = "184b1568-7e1b-4a92-a811-02e91f496510"
             user = User.objects.get(accessToken=accessToken)
             
             if not user.is_active:
@@ -177,7 +179,8 @@ class WishListAPIView(APIView):
             return Response("Internal server error", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
     def put(self, request):
-        accessToken = request.data['accessToken']
+        # accessToken = request.data['accessToken']
+        accessToken = "184b1568-7e1b-4a92-a811-02e91f496510"
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):

@@ -20,6 +20,17 @@
     color: white;
 }
 
+.wishlist-mentor-cards {
+    display: grid;
+    column-gap: 4rem;
+    row-gap: 1rem;
+    flex-direction: row;
+    grid-template-columns: auto auto auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem;
+}
+
 .input {
     display: flex;
     justify-content: center;

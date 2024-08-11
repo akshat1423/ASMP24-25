@@ -123,25 +123,18 @@
 
 }
 
-
 .myimg:hover {
     transform: scale(1.2);
     /* opacity: 0;  */
 
 }
-
-
 .mentorsContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: 50px;
-    margin-left: 65px;
+    justify-content: center;
+    margin: 2rem;
 }
-
-
-
 
 .animated-div {
     animation: animateDiv 0.5s ease-in-out forwards;

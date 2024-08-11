@@ -525,7 +525,7 @@ export default function Wishlist(props) {
         <div className="wishlist-headings-1">Wishlist</div>
 
         {/* <Wishlist_Mentor /> */}        
-        <div className="mentorsContainer">
+        <div className="wishlist-mentor-cards">
         {mentors && mentors.length > 0 ? (
             mentors.map((mentor, index) => (
               <Wishlist_MentorCard key={mentor.id} mentor={mentor} />
