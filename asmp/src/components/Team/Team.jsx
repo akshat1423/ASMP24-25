@@ -26,7 +26,7 @@ const Team = () => {
 
   return (
     <div className="team-members">
-      <h1 className='heading'>ASMP TEAM 2024-25</h1>
+      <h1 className='headingg'>ASMP TEAM 2024-25</h1>
       <h1 className='head2'>CORE TEAM MEMBERS</h1>
       <div className="team-grid-core">
         {coreMembers.map((member, index) => (

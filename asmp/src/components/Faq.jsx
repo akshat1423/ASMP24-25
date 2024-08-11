@@ -2,42 +2,6 @@ import React, { useState,useEffect, useRef } from "react";
 import "./Faq.css";
 import Accordion from "react-bootstrap/Accordion";
 
-const FAQItem = ({ question, answer, isOpen, toggleFAQ }) => {
-  return (
-    <div className="p-3 font-fraunces">
-      <div
-        className="font-normal text-2xl my-4 w-10/12 flex justify-between items-center"
-        onClick={toggleFAQ}
-      >
-        <span className="cursor-pointer">{question}</span>
-        {!isOpen && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width={44}
-            height={44}
-            color={"#ffffff"}
-            fill={"white"}
-          >
-            <path
-              d="M12 4V20M20 12H4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        )}
-      </div>
-      {isOpen && (
-        <div className="font-normal text-xl my-5 w-10/12">{answer}</div>
-      )}
-
-      <div className="border-1 w-10/12"></div>
-    </div>
-  );
-};
-
 const FAQs = () => {
   const faqsData = [
     {
