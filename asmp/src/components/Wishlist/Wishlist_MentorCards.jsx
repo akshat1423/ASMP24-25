@@ -7,7 +7,7 @@ const MentorCard = ({ mentor }) => {
   const handleClick = () => {
     console.log("Clicked!");
     setClicked((prevState) => !prevState);
-  };
+  };  
 
   return (
     <div className="col-sm-3" style={{ margin: "1rem", height: "fit-content" }}>
