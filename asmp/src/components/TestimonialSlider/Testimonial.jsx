@@ -1,11 +1,11 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import './swiper-custom.css'; // Import the custom CSS
-import img from './img.jpg'
+// import React from 'react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Navigation, Pagination } from 'swiper/modules';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import './swiper-custom.css'; // Import the custom CSS
+// import img from './img.jpg'
 
 const testimonials = [
   {
@@ -36,10 +36,85 @@ const testimonials = [
   // Add more testimonials as needed
 ];
 
+// const TestimonialSlider = () => {
+//   return (<>
+//     <div className="testimonialHeading" style={{color:'black',display:'flex', alignItems:'center',justifyContent:'flex-start', fontSize:'3rem',fontWeight:'500',paddingLeft:'10%'}}>Testimonials</div>
+//     <div style={styles.sliderContainer}>
+//       <Swiper
+//         modules={[Navigation, Pagination]}
+//         spaceBetween={50}
+//         slidesPerView={3}
+//         navigation
+//         pagination={{ clickable: true }}
+//         loop={true}
+//         centeredSlides={true}
+//         breakpoints={{
+//             1050: {
+//               slidesPerView: 3,
+//             },
+//             750: {
+//               slidesPerView: 2,
+//             },
+//             0: {
+//               slidesPerView: 1,
+//             },
+//           }}
+//       >
+//         {testimonials.map((testimonial, index) => (
+//           <SwiperSlide key={index}>
+//             <div style={styles.testimonialItem}>
+//                 <div style={{height:'100%',width: '100%',display:"flex",flexDirection:'column'}}>
+//                   <div className="name-heading" style={{height:'15%',width:'100%',color:'black'}}>{testimonial.name}</div>
+//                   <div className="pic-content" style={{height:'85%',width:'100%',display:"flex"}}>
+//                     <div className="image" style={{height:'100%',width:'35%',display:'flex',justifyContent:'center'}}>
+//                 <img src={img} alt="" />
+
+//                     </div>
+//                     <div className="testimonal-content" style={{height:'100%',width:'65%',color:'black',textAlign:'justify',padding:'1%',fontSize:'0.9rem',lineHeight:'100%'}}>{testimonial.feedback}</div>
+//                   </div>
+//                 </div>
+//             </div>
+//           </SwiperSlide>
+//         ))}
+//       </Swiper>
+//     </div>
+//     </>
+//   );
+// };
+
+
+import React, { useRef, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import './swiper-custom.css';
+import img from './img.jpg'
+
+// ... existing testimonials array ...
+
 const TestimonialSlider = () => {
-  return (<>
-    <div className="testimonialHeading" style={{color:'black',display:'flex', alignItems:'center',justifyContent:'flex-start', fontSize:'3rem',fontWeight:'500',paddingLeft:'10%'}}>Testimonials</div>
-    <div style={styles.sliderContainer}>
+  const testimonialRef = useRef(null);
+
+  useEffect(() => {
+    const scrollToTestimonial = () => {
+      testimonialRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.addEventListener('scrollToTestimonials', scrollToTestimonial);
+
+    return () => {
+      window.removeEventListener('scrollToTestimonials', scrollToTestimonial);
+    };
+  }, []);
+
+  return (
+    <div ref={testimonialRef} id="testimonials">
+      <div style={{height:'10vh'}}></div>
+
+      <div className="testimonialHeading" style={{color:'black',display:'flex', alignItems:'center',justifyContent:'flex-start', fontSize:'3rem',fontWeight:'500',paddingLeft:'10%'}}>Testimonials</div>
+      <div style={styles.sliderContainer}>
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={50}
@@ -77,10 +152,12 @@ const TestimonialSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      </div>
     </div>
-    </>
   );
 };
+
+// ... existing styles object ...
 
 const styles = {
   sliderContainer: {
@@ -98,8 +175,8 @@ const styles = {
     borderRadius: '0',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     overflow: 'hidden',
-    margin:'0 5%'
-
+    margin:'0 5%',
+    fontFamily:'Sans-serif'
   },
   image: {
     width: '150px',

@@ -24,17 +24,18 @@ function App() {
   return (
     
      <>
-      <Navbar></Navbar>
       
       {/* <Line></Line> */}
     
     <Router>
+    <Navbar></Navbar>
+
     <Routes>
     <Route path='' element={<Homee></Homee>}></Route>
       <Route path='/team' element={<Team />}></Route>
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route path="/profile-nav" element={<Profile />} />
       <Route path="/toggle" element={<Toggle />} />
       {/* <Route path="/events" element={<EventImages />} /> */}
       {/* <Route path="/sneakpeak" element={<Sneakpeak/>} /> */}
