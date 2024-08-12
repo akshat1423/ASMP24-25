@@ -15,7 +15,7 @@ function Sneakpeak() {
       <CursorAnimation />
       <div className="sneakpeak-container">
         <br/>
-        <h1 className="heading">Sneak Peak</h1>
+        <h1 className="heading">Sneak Peeks</h1>
         <Swiper
           spaceBetween={60}
           effect={'coverflow'}

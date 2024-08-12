@@ -20,8 +20,8 @@ class MentorListAPIView(APIView):
         serializer = MentorSerializer(mentors, many=True)
         return Response(serializer.data)
     def post(self, request, format=None, field=None):
-        accessToken ="e073c139-6fa3-4c31-acd6-7c6d7c0cd33c"
-        accessToken = request.data['accessToken']
+        accessToken ="df065568-5687-4f74-b9e0-dbcf77732fc5"
+        # accessToken = request.data['accessToken']
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):

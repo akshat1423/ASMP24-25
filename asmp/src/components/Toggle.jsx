@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import "./Toggle.css";
-import NonCoreConsult from "./NonCoreConsult";
-import NonCoreFinance from "./NonCoreFinance";
-import NonCoreSoftware from "./NonCoreSoftware";
+import NonCoreManagement_consult from "./non-corefiles/NonCoreManagement-consult";
+import NonCoreFinance from "./non-corefiles/NonCoreFinance";
+import NonCoreSoftware from "./non-corefiles/NonCoreSoftware";
 import Core from "./Core";
+import research from "./research";
+import civil_services from "./non-corefiles/civil_services";
+import management from "./non-corefiles/management";
+import product_management from "./non-corefiles/product_management";
+import strategy_consulting from "./non-corefiles/strategy_consulting";
+import design from "./non-corefiles/design";
+import marketing from "./non-corefiles/marketing";
+import entrepreneurship from "./non-corefiles/entrepreneurship";
 import backgroundImage from "../assets/asmp_bg.jpeg";
 import CursorAnimation from "./CursorAnimation";
 
@@ -95,12 +103,16 @@ const Toggle = () => {
             <ul className="toggle-ul-core">
               {coreTabs.map(({ id, label, href = `#${id}` }) => (
                 <li key={id} className="toggle-li-core">
-                  <a className="toggle-li-link-core" href={href}>
+                  <a className={`toggle-li-link-core ${
+                      activeTab === id ? "active" : ""
+                    }`} href={href}  onClick={(e) => handleTabClick(id, e)}>
                     {label}
                   </a>
                 </li>
               ))}
             </ul>
+            {activeTab === "core-engineering" && <Core />}
+            {activeTab === "research" && <research />}
           </div>
         )}
 
@@ -122,10 +134,18 @@ const Toggle = () => {
                 </li>
               ))}
             </ul>
-
-            {activeTab === "consult" && <NonCoreConsult />}
+            {activeTab === "analytics" && <NonCoreConsult />}
+            {activeTab === "civil-service" && <civil_services/>}
+            {activeTab === "management-consult" && <NonCoreManagement_consult />}
+            {activeTab === "stratergy-consult" && <strategy_consulting />}
             {activeTab === "finance" && <NonCoreFinance />}
             {activeTab === "software" && <NonCoreSoftware />}
+            {activeTab === "others" && <other/>}
+            {activeTab === "product-management" && <product_management/>}
+            {activeTab === "design" && <design/>}
+            {activeTab === "management" && <management />}
+            {activeTab === "marketing" && <marketing />}
+            {activeTab === "entrepreneurship" && <entrepreneurship/>}
           </div>
         )}
       </div>

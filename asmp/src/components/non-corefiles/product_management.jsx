@@ -1,9 +1,9 @@
 import React , {useEffect,useState} from 'react';
-import UseFetchMentors from "../hooks/useFetchMentors";
-import { mentorsListConsult } from '../data/noncore_consult';
-import MentorCard from './MentorCard';
+import UseFetchMentors from "../../hooks/useFetchMentors";
+// import { mentorsListConsult } from '../../data/noncore_consult';
+import MentorCard from '../MentorCard';
 
-const NonCoreConsult = () => {
+const product_management= () => {
 
 
  const FIELDS = [
@@ -15,9 +15,9 @@ const NonCoreConsult = () => {
     // ['management', 'Management'],
     // ['management_consulting', 'Management consulting'],
     // ['marketing', 'Marketing'],
-    // ['product_management', 'Product Management'],
+    ['product_management', 'Product Management'],
     // ['research', 'Research'],
-    ['strategy_consulting', 'Strategy consulting'],
+    // ['strategy_consulting', 'Strategy consulting'],
     // ['entrepreneurship', 'Entrepreneurship'],
     // ['other', 'Other'],
   ];
@@ -53,7 +53,7 @@ const NonCoreConsult = () => {
   return (
     <div className="bs-example" style={{ backgroundColor: 'transparent' }}>
       <div className="tab-content">
-        <div className="tab-pane fade show active" id="consult">
+        <div className="tab-pane fade show active" id="product_management">
           <div
             className="row"
             id="t05"
@@ -84,4 +84,4 @@ const NonCoreConsult = () => {
   );
 };
 
-export default NonCoreConsult;
+export default product_management;
