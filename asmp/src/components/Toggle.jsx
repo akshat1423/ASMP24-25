@@ -14,6 +14,8 @@ import Marketing from "./non-corefiles/marketing";
 import Entrepreneurship from "./non-corefiles/entrepreneurship";
 import backgroundImage from "../assets/asmp_bg.jpeg";
 import CursorAnimation from "./CursorAnimation";
+import Analytics from "./non-corefiles/analytics.jsx";
+import Other from "./non-corefiles/other.jsx";
 
 const Toggle = () => {
   const [selectedOption, setSelectedOption] = useState("core");
@@ -134,7 +136,7 @@ const Toggle = () => {
                 </li>
               ))}
             </ul>
-            {activeTab === "analytics" && <NonCoreManagement_consult />}
+            {activeTab === "analytics" && <Analytics/>}
             {activeTab === "civil-service" && <Civil_services/>}
             {activeTab === "management-consult" && <NonCoreManagement_consult />}
             {activeTab === "strategy-consult" && <Strategy_consulting />}
