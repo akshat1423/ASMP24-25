@@ -12,16 +12,9 @@ from Registrations.models import WishList
 from Authentication.models import User
     
 class MentorListAPIView(APIView):
-    def get(self, request, field=None):
-        if field:
-            mentors = Mentor.objects.filter(field=field)
-        else:
-            mentors = Mentor.objects.all()
-        serializer = MentorSerializer(mentors, many=True)
-        return Response(serializer.data)
     def post(self, request, format=None, field=None):
-        accessToken ="df065568-5687-4f74-b9e0-dbcf77732fc5"
         # accessToken = request.data['accessToken']
+        accessToken = "17e74470-b9e9-48df-a39b-4df7f89204ae"
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):

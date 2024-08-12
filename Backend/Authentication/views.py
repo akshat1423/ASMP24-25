@@ -64,7 +64,8 @@ class Login(APIView):
 
 class ProfileView(APIView):
     def get(self, request, format=None):
-        accessToken = request.query_params.get('accessToken')
+        # accessToken = request.query_params.get('accessToken')
+        accessToken = '17e74470-b9e9-48df-a39b-4df7f89204ae'
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):

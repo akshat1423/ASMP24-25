@@ -25,7 +25,7 @@ function App() {
           <Route path="/team" element={<Team />}></Route>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile-nav" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/toggle" element={<Toggle />} />
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/events" element={<EventImages />} />

@@ -15,17 +15,15 @@
   background-size: cover; /* Ensures background image covers the entire screen */
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Prevents the background image from repeating */
-  
-  overflow-x: hidden; /* Hide horizontal overflow */
-  overflow-y: auto; /* Allow vertical scrolling */
-}
-
-.main-container {
   display: flex;
   flex-direction: column; /* Allows content to stack vertically */
   align-items: center;
   justify-content: flex-start; /* Align content to the top of the screen */
+  overflow-x: hidden; /* Hide horizontal overflow */
+  overflow-y: auto; /* Allow vertical scrolling */
 }
+
+
 
 .heading {
   font-size: 2.5rem;
