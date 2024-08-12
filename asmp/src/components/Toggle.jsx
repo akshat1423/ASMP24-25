@@ -4,14 +4,14 @@ import NonCoreManagement_consult from "./non-corefiles/NonCoreManagement-consult
 import NonCoreFinance from "./non-corefiles/NonCoreFinance";
 import NonCoreSoftware from "./non-corefiles/NonCoreSoftware";
 import Core from "./Core";
-import research from "./research";
-import civil_services from "./non-corefiles/civil_services";
-import management from "./non-corefiles/management";
-import product_management from "./non-corefiles/product_management";
-import strategy_consulting from "./non-corefiles/strategy_consulting";
-import design from "./non-corefiles/design";
-import marketing from "./non-corefiles/marketing";
-import entrepreneurship from "./non-corefiles/entrepreneurship";
+import Research from "./research";
+import Civil_services from "./non-corefiles/civil_services";
+import Management from "./non-corefiles/management";
+import Product_management from "./non-corefiles/product_management";
+import Strategy_consulting from "./non-corefiles/strategy_consulting";
+import Design from "./non-corefiles/design";
+import Marketing from "./non-corefiles/marketing";
+import Entrepreneurship from "./non-corefiles/entrepreneurship";
 import backgroundImage from "../assets/asmp_bg.jpeg";
 import CursorAnimation from "./CursorAnimation";
 
@@ -34,7 +34,7 @@ const Toggle = () => {
     { id: "analytics", label: "Analytics" },
     { id: "civil-service", label: "Civil Services/Government of India" },
     { id: "management-consult", label: "Management Consulting", href: "#consult" },
-    { id: "stratergy-consult", label: "Stratergy Consulting", href: "#consult" },
+    { id: "strategy-consult", label: "Stratergy Consulting", href: "#consult" },
     { id: "finance", label: "Finance" ,href:"#finance"},
     { id: "software", label: "IT/Software" ,href:"#software"},
     { id: "others", label: "Others" ,href:"#others"},
@@ -112,7 +112,7 @@ const Toggle = () => {
               ))}
             </ul>
             {activeTab === "core-engineering" && <Core />}
-            {activeTab === "research" && <research />}
+            {activeTab === "research" && <Research />}
           </div>
         )}
 
@@ -134,18 +134,18 @@ const Toggle = () => {
                 </li>
               ))}
             </ul>
-            {activeTab === "analytics" && <NonCoreConsult />}
-            {activeTab === "civil-service" && <civil_services/>}
+            {activeTab === "analytics" && <NonCoreManagement_consult />}
+            {activeTab === "civil-service" && <Civil_services/>}
             {activeTab === "management-consult" && <NonCoreManagement_consult />}
-            {activeTab === "stratergy-consult" && <strategy_consulting />}
+            {activeTab === "strategy-consult" && <Strategy_consulting />}
             {activeTab === "finance" && <NonCoreFinance />}
             {activeTab === "software" && <NonCoreSoftware />}
-            {activeTab === "others" && <other/>}
-            {activeTab === "product-management" && <product_management/>}
-            {activeTab === "design" && <design/>}
-            {activeTab === "management" && <management />}
-            {activeTab === "marketing" && <marketing />}
-            {activeTab === "entrepreneurship" && <entrepreneurship/>}
+            {activeTab === "others" && <Other/>}
+            {activeTab === "product-management" && <Product_management/>}
+            {activeTab === "design" && <Design/>}
+            {activeTab === "management" && <Management />}
+            {activeTab === "marketing" && <Marketing />}
+            {activeTab === "entrepreneurship" && <Entrepreneurship/>}
           </div>
         )}
       </div>

@@ -3,7 +3,7 @@ import UseFetchMentors from "../../hooks/useFetchMentors";
 // import { mentorsListConsult } from '../../data/noncore_consult';
 import MentorCard from '../MentorCard';
 
-const entrepreneurship = () => {
+const Entrepreneurship = () => {
 
 
  const FIELDS = [
@@ -84,4 +84,4 @@ const entrepreneurship = () => {
   );
 };
 
-export default entrepreneurship;
+export default Entrepreneurship;

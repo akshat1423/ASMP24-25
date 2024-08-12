@@ -3,7 +3,7 @@ import UseFetchMentors from "../../hooks/useFetchMentors";
 // import { mentorsListConsult } from '../../data/noncore_consult';
 import MentorCard from '../MentorCard';
 
-const marketing = () => {
+const Marketing = () => {
 
 
  const FIELDS = [
@@ -84,4 +84,4 @@ const marketing = () => {
   );
 };
 
-export default marketing;
+export default Marketing;
