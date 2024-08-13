@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+.team-members {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: 'Fraunces', serif;
+  background-image: url('https://s3-alpha-sig.figma.com/img/3e5d/d555/b0f300a3aa4e25bdacbd12bb57b8007f?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=R2ROSG10IzQRa~ETlFbxINZnSeFkqWq3B30V0bismzkTSN3htdbrCrSshnVa4OYkErFusUWSFB8vFngYaBdjW6uOLjNcBWlsYBnClWzUCivf3AHaxzatVTi~C~3wf1zOzlzDZ0Zm1UBhFVB4qrr6ZfgkOF0TxhACzD8Gq2TRCORDhPvhOSfCS5AJb2Do5n04qxp7SSzZ-zi3M9yQOsuh7NC0C4-Ufk352t3-0C5jwr2Nle~ecDNiPtC8~U4td3ME-hd7OPnUSQIEfPdLhNRerIzq7Gpm5MuO8BI-ijnffgE0DUY0aLozYrtm~Sufs1gv1FcoztYeQcfAlRu~7u61tw__');
+  background-size: cover;
+  background-position: center;
+  padding: 10vh 0;
+}
+
+.team-members::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.team-members > * {
+  position: relative;
+  z-index: 2;
+}
+
+.headingg {
+  font-family: 'Fraunces', serif;
+  font-size: 4.5vw;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 5vh;
+
+}
+
+.head2 {
+  font-family: 'Fraunces', serif;
+  font-size: 3.5vw;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 5vh;
+}
+
+.team-grid-core {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3vw;
+  max-width: 90vw;
+  margin: 0 auto 5vh;
+}
+
+.team-grid-coordinators {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3vw;
+  max-width: 90vw;
+  margin: 0 auto 5vh;
+}
+
+@media (max-width: 768px) {
+  .team-grid-coordinators {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .headingg {
+    font-size: 6vw;
+  }
+  .head2 {
+    font-size: 5vw;
+  }
+  .team-members h2 {
+    font-size: 4vw;
+  }
+  .role {
+    font-size: 3vw;
+  }
+  .image-circle {
+    width: 45vw; 
+  }
+  .name {
+    font-size: 3vw;
+  }
+}
+
+.team-member {
+  text-align: center;
+  padding: 2vh 1vw;
+}
+
+.image-circle {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+/* Name styling */
+.name {
+  font-family: 'Fraunces', serif;
+  font-size: 2.5vw;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  margin-top: 1vh;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: center;
+  }
+  100% {
+    background-position: center 10%;
+  }
+}
+
+.team-members {
+  animation: moveBackground 10s linear infinite alternate;
+}

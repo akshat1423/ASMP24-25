@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+
+.profile {
+    background-image: url('../assets/background_resized.png') ;
+    background-size: cover;
+    font-family: 'Inknut Antiqua' !important;
+    animation: profileAnimation 7s ease-in-out infinite alternate;
+    /* z-index: 10; */
+}
+
+.profile h1 {
+    font-family: 'Fraunces' !important;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+/* @-webkit-keyframes profileAnimation {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: center 10%;
+    }
+} */
+
+@keyframes profileAnimation {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: center 5%;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile {
+        background-image: url('../assets/890378dbb61bdf023a0502a389061b44.png');
+    }
+}
