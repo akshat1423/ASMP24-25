@@ -13,7 +13,8 @@ from Authentication.models import User
     
 class MentorListAPIView(APIView):
     def post(self, request, format=None, field=None):
-        accessToken = request.data['accessToken']
+        # accessToken = request.data['accessToken']
+        accessToken = "184b1568-7e1b-4a92-a811-02e91f496510"
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -85,5 +86,3 @@ def add_mentors_from_local_csv():
                 
         except Exception as e:
             print('Failed to add data: ', e)
-
-    

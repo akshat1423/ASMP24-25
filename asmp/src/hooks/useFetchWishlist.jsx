@@ -7,7 +7,7 @@ const UseFetchWishlist = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-  const [mentors, setMentors] = useState(null);
+  const [mentors, setMentors] = useState([]);
 
   const fetchMentors = useCallback(async () => {
     setLoading(true);
@@ -15,33 +15,22 @@ const UseFetchWishlist = () => {
     setSuccess(false);
 
     try {
-      // const accessToken = localStorage.getItem("accessToken");
       const accessToken = "184b1568-7e1b-4a92-a811-02e91f496510";
 
-      // You don't need to include CSRF token for GET requests
-      const response = await axios.get(`http://127.0.0.1:8000/api/registration/wishlist/`,
-        {
-          params: {
-            accessToken: accessToken,
-          },
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await axios.get(`http://127.0.0.1:8000/api/registration/wishlist/`, {
+        params: {
+          accessToken: accessToken,
+        },
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       if (response.status === 200) {
         setSuccess(true);
-        console.log(response.data);
         setMentors(response.data);
-      } else if (response.status === 400) {
-        console.log(response.data);
-        const jsonData = await response.data;
-        setError(jsonData);
-      } else if (response.status === 404) {
-        console.log(response.data);
-        setError("404");
-        console.log("404");
+      } else {
+        setError("Error fetching wishlist");
       }
     } catch (err) {
       setError(err.message);
@@ -50,7 +39,7 @@ const UseFetchWishlist = () => {
     }
   }, []);
 
-  return { fetchMentors, setError, loading, error, success, mentors, setMentors };
+  return { fetchMentors, loading, error, success, mentors };
 };
 
 export default UseFetchWishlist;

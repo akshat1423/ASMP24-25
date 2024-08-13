@@ -15,13 +15,14 @@ const UseFetchMentors = () => {
         setSuccess(false);
         const userData = {
             // "accessToken": localStorage.getItem('accessToken'),
-            'accessToken':"17e74470-b9e9-48df-a39b-4df7f89204ae",
+            'accessToken':"184b1568-7e1b-4a92-a811-02e91f496510",
         };
 
         try {
             // Get CSRF token from cookies
-            const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
-            const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : '';
+            // const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
+            // const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : '';
+            const csrfToken = "35Znfr3R2fYtO0zbFhuj3Li6s68F9sx9"
 
             const response = await axios.post(`http://127.0.0.1:8000/api/mentors/${field}/`, userData, {
                 headers: {
@@ -38,7 +39,6 @@ const UseFetchMentors = () => {
                 setError("Unexpected response status");
             }
         } catch (err) {
-            // Handle different types of errors
             setError(err.response?.data?.error || err.message);
         } finally {
             setLoading(false);

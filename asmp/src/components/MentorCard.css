@@ -1,15 +1,22 @@
 .card {
-    transition: all 0.3s ease; /* Smooth transition for responsiveness */
+    transition: all 0.3s ease;
+    display: grid;
+    column-gap: 4rem;
+    row-gap: 1rem;
+    flex-direction: row;
+    grid-template-columns: auto auto auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem;
   }
   
   @media (max-width: 1000px) {
     .card {
-      max-width: 100%; /* Full width on smaller screens */
-      margin: 0 auto; /* Center the card */
+      max-width: 100%;
+      margin: 0 auto;
     }
   
     .card-header {
-      font-size: 1rem; /* Adjust font size for smaller screens */
+      font-size: 1rem;
     }
   }
-  

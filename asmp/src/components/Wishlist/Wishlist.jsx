@@ -7,13 +7,9 @@ import { gsap } from "gsap";
 import Swal from "sweetalert2";
 import UseFetchWishlist from "../../hooks/useFetchWishlist";
 import UseRegisterMentors from "../../hooks/useRegisterMentors";
-import UseFetchMentors from "../../hooks/useFetchMentors";
-import UseAddToWishlist from "../../hooks/useAddToWishlist";
 import UseDeleteFromWishlist from "../../hooks/useDeleteFromWishlist";
 import styled from "styled-components";
 import "./Card.css";
-import { ShoesDetails } from "./shoesDetails";
-import MentorCard from "../MentorCard";
 import Wishlist_MentorCard from "./Wishlist_MentorCards";
 
 export default function Wishlist(props) {
@@ -490,7 +486,7 @@ export default function Wishlist(props) {
         setMentors(newMentors);
         Swal.fire(
           "Removed!",
-          "Mentor has been removed from wishlist.",
+          "Mentor has been removed from wishlist, please refresh this page.",
           "success"
         );
       }
