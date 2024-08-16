@@ -15,9 +15,10 @@ const UseRegisterMentors = (props) => {
 
     try {
       // Get CSRF token from cookies
-      const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
-      const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : "DUMMY_CSRF_TOKEN";
-      // const csrfToken = "35Znfr3R2fYtO0zbFhuj3Li6s68F9sx9"
+      // const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
+      // const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : "DUMMY_CSRF_TOKEN";
+      const csrfToken = "sI1x5VBdzD4guzlwj9wgiOlNXMU3Dj0N"
+      console.log("CSRF token:", csrfToken);
 
       const response = await fetch(
         "http://127.0.0.1:8000/api/registration/register/",
@@ -25,11 +26,18 @@ const UseRegisterMentors = (props) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "X-CSRFToken": 'csrfToken',
+            "X-CSRFToken": csrfToken,
           },
           body: JSON.stringify(userData),
         }
       );
+
+      console.log(response);
+      console.log("Response status:", response.status);
+      console.log("Response headers:", response.headers);
+
+      const responseData = await response.json().catch(() => null);
+    console.log("Response data:", responseData);
 
       if (response.status === 200) {
         setError("Registration Successful");

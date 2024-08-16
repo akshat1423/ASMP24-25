@@ -25,7 +25,7 @@ class Mentor(models.Model):
     popularity = models.IntegerField(default=0)
     
     def __str__(self):
-        return self.fullname+" "+self.designation
+        return str(self.id) + " " + self.fullname+" "+self.designation
     
     
     

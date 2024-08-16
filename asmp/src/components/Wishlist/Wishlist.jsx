@@ -455,6 +455,7 @@ export default function Wishlist(props) {
                 if (result.isConfirmed) {
                     registerMentors(profile);
                     if (success) {
+                      console.log("Registered successfully");
                         Swal.fire(
                             "Registered!",
                             "You have successfully registered your preferences.",
@@ -464,6 +465,7 @@ export default function Wishlist(props) {
                 }
             });
     } catch (err) {
+      console.log("Error registering mentors");
         console.log(err);
     }
   }
@@ -501,9 +503,16 @@ export default function Wishlist(props) {
   //   );
   // }
 
+  // useEffect(() => {
+  //   fetchMentors();
+  // }, [mentors]);
+
   useEffect(() => {
-    fetchMentors();
-  }, []);
+    const checkMentors = async () => {
+      await fetchMentors(); // Make sure this fetches the latest wishlist
+    };
+    checkMentors();
+  }, [fetchMentors]);
 
   return (
     <>

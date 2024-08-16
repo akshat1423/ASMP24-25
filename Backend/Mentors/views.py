@@ -14,7 +14,7 @@ from Authentication.models import User
 class MentorListAPIView(APIView):
     def post(self, request, format=None, field=None):
         accessToken = request.data['accessToken']
-        print('accessToken = ',accessToken)
+        # print('accessToken = ',accessToken)
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
