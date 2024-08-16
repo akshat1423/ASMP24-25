@@ -20,9 +20,9 @@ const UseDeleteFromWishlist = () => {
 
         try {
             // Get CSRF token from cookies
-            // const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
-            // const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : 'DUMMY_CSRF_TOKEN';
-            const csrfToken = "35Znfr3R2fYtO0zbFhuj3Li6s68F9sx9"
+            const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
+            const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : 'DUMMY_CSRF_TOKEN';
+            // const csrfToken = "35Znfr3R2fYtO0zbFhuj3Li6s68F9sx9"
 
             const response = await axios.post(`http://127.0.0.1:8000/api/registration/wishlist/`, userData, {
                 headers: {
@@ -36,9 +36,12 @@ const UseDeleteFromWishlist = () => {
                 setSuccess(true);
                 Swal.fire({
                     icon: 'success',
-                    title: 'Menor Removed to wishlist',
+                    title: 'Mentor Removed from wishlist',
                     showConfirmButton: false,
-                })
+                    timer: 1500 // Auto close after 1.5 seconds
+                }).then(() => {
+                    window.location.reload(); // Refresh the page immediately after the alert is closed or timer expires
+                });
             }
             else {
                 Swal.fire({
@@ -49,8 +52,6 @@ const UseDeleteFromWishlist = () => {
                 setError(response.data);
             }
 
-
-
             // const response = await fetch('/api/mentors/', {
             //     method: 'GET',
             //     headers: {
@@ -60,8 +61,6 @@ const UseDeleteFromWishlist = () => {
             //     },
             //     body: JSON.stringify(userData),
             // });
-
-
 
         } catch (err) {
             setError(err.message);

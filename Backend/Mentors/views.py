@@ -13,8 +13,13 @@ from Authentication.models import User
     
 class MentorListAPIView(APIView):
     def post(self, request, format=None, field=None):
+<<<<<<< HEAD
         # accessToken = request.data['accessToken']
         accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
+=======
+        accessToken = request.data['accessToken']
+        # print('accessToken = ',accessToken)
+>>>>>>> 9489e6568018ab22832a06313891bfca1204128e
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -45,8 +50,10 @@ class MentorListAPIView(APIView):
             serialized_mentor = MentorSerializer(mentor).data
             serialized_mentor['wishlisted'] = mentor.pk in wishlist_mentors
             serialized_mentors.append(serialized_mentor)
-                
+        
+        
         return Response(serialized_mentors, status=status.HTTP_200_OK)
+
 
 def add_mentors_from_local_csv():
         try:
@@ -86,3 +93,5 @@ def add_mentors_from_local_csv():
                 
         except Exception as e:
             print('Failed to add data: ', e)
+
+    

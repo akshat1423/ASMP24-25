@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -8,95 +7,25 @@ from Authentication.models import User, Profile
 from .models import Registration, WishList
 from Mentors.serializers import MentorSerializer
 from Mentors.models import Mentor
-import csv
 
-# class RegistrationAPIView(APIView):
-#     def post(self, request):
-#         # accessToken = request.data['accessToken']
-#         accessToken = "184b1568-7e1b-4a92-a811-02e91f496510"
-#         try:
-#             user = User.objects.get(accessToken=accessToken)
-#             if(user.is_active == False):
-#                 return Response("User not verified", status=status.HTTP_400_BAD_REQUEST)
-#             if(not Profile.objects.filter(user=user)[0]):
-#                 return Response("Profile Not Found", status=status.HTTP_404_NOT_FOUND)
-#         except Exception as e:
-#             print("Error while fetching user", e)
-#             return Response(status=status.HTTP_404_NOT_FOUND)
-#         print(user)
-#         request.data['user'] = user.id
-#         serializer = RegistrationSerializer(data=request.data)
-#         if serializer.is_valid():
-#             try:
-#                 pref1 = Mentor.objects.get(id=serializer.validated_data['pref1'].id)
-#                 pref2 = Mentor.objects.get(id=serializer.validated_data['pref2'].id)
-#                 pref3 = Mentor.objects.get(id=serializer.validated_data['pref3'].id)
-#                 pref4 = Mentor.objects.get(id=serializer.validated_data['pref4'].id)
-#                 pref5 = Mentor.objects.get(id=serializer.validated_data['pref5'].id)
-                
-#                 if(pref1.should_show == False or pref2.should_show == False or pref3.should_show == False or pref4.should_show == False or pref5.should_show == False):
-#                     if(pref1.should_show == False):
-#                         return Response(f'Mentor with ID: {pref1.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
-#                     if(pref2.should_show == False):
-#                         return Response(f'Mentor with ID: {pref2.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
-#                     if(pref3.should_show == False):
-#                         return Response(f'Mentor with ID: {pref3.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
-#                     if(pref4.should_show == False):
-#                         return Response(f'Mentor with ID: {pref4.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
-#                     if(pref5.should_show == False):
-#                         return Response(f'Mentor with ID: {pref5.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
-                        
-#                 pref1.popularity += 5
-#                 pref2.popularity += 4
-#                 pref3.popularity += 3
-#                 pref4.popularity += 2
-#                 pref5.popularity += 1
-                
-#                 if(pref1.popularity > pref1.preferred_mentees*15):
-#                     pref1.should_show = False
-                
-#                 if(pref2.popularity > pref2.preferred_mentees*15):
-#                     pref2.should_show = False
-                
-#                 if(pref3.popularity > pref3.preferred_mentees*15):
-#                     pref3.should_show = False
-                
-#                 if(pref4.popularity > pref4.preferred_mentees*15):
-#                     pref4.should_show = False
-                    
-#                 if(pref5.popularity > pref5.preferred_mentees*15):
-#                     pref5.should_show = False
-                    
-#                 pref1.save()
-#                 pref2.save()
-#                 pref3.save()
-#                 pref4.save()
-#                 pref5.save()
-#                 serializer.save()
-                
-#             except Exception as e:
-#                 print("Error while updating mentor popularity", e)
-#                 return Response("Something went wrong", status=status.HTTP_406_NOT_ACCEPTABLE)
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         else:
-#             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 class RegistrationAPIView(APIView):
     def post(self, request):
+<<<<<<< HEAD
         # accessToken = request.data['accessToken']
         accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
+=======
+        accessToken = request.data['accessToken']
+>>>>>>> 9489e6568018ab22832a06313891bfca1204128e
         try:
             user = User.objects.get(accessToken=accessToken)
-            if not user.is_active:
+            if(user.is_active == False):
                 return Response("User not verified", status=status.HTTP_400_BAD_REQUEST)
-            
-            # Check if profile exists
-            profile = Profile.objects.filter(user=user).first()
-            if not profile:
+            if(not Profile.objects.filter(user=user)[0]):
                 return Response("Profile Not Found", status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
-            print("Error while fetching user or profile", e)
+            print("Error while fetching user", e)
             return Response(status=status.HTTP_404_NOT_FOUND)
-        
         print(user)
         request.data['user'] = user.id
         serializer = RegistrationSerializer(data=request.data)
@@ -108,23 +37,62 @@ class RegistrationAPIView(APIView):
                 pref4 = Mentor.objects.get(id=serializer.validated_data['pref4'].id)
                 pref5 = Mentor.objects.get(id=serializer.validated_data['pref5'].id)
                 
-                if not all([pref1.should_show, pref2.should_show, pref3.should_show, pref4.should_show, pref5.should_show]):
-                    unavailable_mentors = [mentor.id for mentor in [pref1, pref2, pref3, pref4, pref5] if not mentor.should_show]
-                    return Response(f'Mentors with IDs: {unavailable_mentors} are not available', status=status.HTTP_406_NOT_ACCEPTABLE)
+                if(pref1.should_show == False or pref2.should_show == False or pref3.should_show == False or pref4.should_show == False or pref5.should_show == False):
+                    if(pref1.should_show == False):
+                        return Response(f'Mentor with ID: {pref1.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
+                    if(pref2.should_show == False):
+                        return Response(f'Mentor with ID: {pref2.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
+                    if(pref3.should_show == False):
+                        return Response(f'Mentor with ID: {pref3.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
+                    if(pref4.should_show == False):
+                        return Response(f'Mentor with ID: {pref4.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
+                    if(pref5.should_show == False):
+                        return Response(f'Mentor with ID: {pref5.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
+                        
+                pref1.popularity += 5
+                pref2.popularity += 4
+                pref3.popularity += 3
+                pref4.popularity += 2
+                pref5.popularity += 1
                 
-                # Save the registration
+                if(pref1.popularity > pref1.preferred_mentees*15):
+                    pref1.should_show = False
+                
+                if(pref2.popularity > pref2.preferred_mentees*15):
+                    pref2.should_show = False
+                
+                if(pref3.popularity > pref3.preferred_mentees*15):
+                    pref3.should_show = False
+                
+                if(pref4.popularity > pref4.preferred_mentees*15):
+                    pref4.should_show = False
+                    
+                if(pref5.popularity > pref5.preferred_mentees*15):
+                    pref5.should_show = False
+                    
+                pref1.save()
+                pref2.save()
+                pref3.save()
+                pref4.save()
+                pref5.save()
+
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
             except Exception as e:
-                print("Error while saving registration", e)
-                return Response(status=status.HTTP_400_BAD_REQUEST)
+                print("Error while updating mentor popularity", e)
+                return Response("Something went wrong", status=status.HTTP_406_NOT_ACCEPTABLE)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class WishListAPIView(APIView):
     def post(self, request):
+<<<<<<< HEAD
         # accessToken = request.data['accessToken']
         accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"       
+=======
+        accessToken = request.data['accessToken']
+>>>>>>> 9489e6568018ab22832a06313891bfca1204128e
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -145,12 +113,17 @@ class WishListAPIView(APIView):
             return Response("Mentor deleted to wishlist", status=status.HTTP_200_OK)
         except Exception as e:
             print("Error while updating wishlist", e)
-            return Response(status=status.HTTP_404_NOT_FOUND) 
+            return Response(status=status.HTTP_404_NOT_FOUND)
+    
     
     def get(self, request):
         try:
+<<<<<<< HEAD
             # accessToken = request.query_params.get('accessToken')
             accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
+=======
+            accessToken = request.query_params.get('accessToken')
+>>>>>>> 9489e6568018ab22832a06313891bfca1204128e
             user = User.objects.get(accessToken=accessToken)
             
             if not user.is_active:
@@ -159,12 +132,15 @@ class WishListAPIView(APIView):
             wishlist = WishList.objects.get(user=user)
             mentors = []
 
+            print('wishlist.mentors.all() = ',wishlist.mentors.all())
+
             for mentor in wishlist.mentors.all():
                 serializer = MentorSerializer(mentor)
                 mentor_data = serializer.data;
                 mentor_data['wishlisted'] = True
                 if(mentor_data['should_show']):
                     mentors.append(mentor_data)
+                
             
             return Response(mentors, status=status.HTTP_200_OK)
 
@@ -177,10 +153,15 @@ class WishListAPIView(APIView):
         except Exception as e:
             print("Error while fetching wishlist", e)
             return Response("Internal server error", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     
     def put(self, request):
+<<<<<<< HEAD
         # accessToken = request.data['accessToken']
         accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
+=======
+        accessToken = request.data['accessToken']
+>>>>>>> 9489e6568018ab22832a06313891bfca1204128e
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -201,6 +182,13 @@ class WishListAPIView(APIView):
         except Exception as e:
             print("Error while updating wishlist", e)
             return Response(status=status.HTTP_404_NOT_FOUND)
+        
+        
+
+
+import csv
+from django.http import HttpResponse
+from .models import Registration
 
 def export_csv(request):
     response = HttpResponse(content_type='text/csv')
@@ -231,7 +219,11 @@ def export_csv(request):
             registration.pref5.id,
             registration.pref5.fullname,
         ])
+
     return response
+
+
+
 
 def export_csv_wishlist(request, queryset):
     response = HttpResponse(content_type='text/csv')
@@ -253,3 +245,4 @@ def export_csv_wishlist(request, queryset):
         ])
 
     return response
+

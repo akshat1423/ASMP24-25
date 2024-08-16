@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-y+y)3punb@h05^!*b3b13$vb*!z*x@fuhdj*9@+v33t7y$95dg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'http://localhost:3001', 'http://localhost:3000']
+ALLOWED_HOSTS = ['*']
+
 
 # Application definition
 
@@ -34,7 +35,7 @@ INSTALLED_APPS = [
     'rest_framework',
     "Authentication",
     "Mentors",
-    "corsheaders",
+    'corsheaders',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -44,9 +45,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -56,9 +57,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "Backend.urls"
 
+
 CORS_ALLOW_ALL_ORIGINS = True
 
+
 CSRF_TRUSTED_ORIGINS = ['https://asmp.sarc-iitb.org']
+
 
 CORS_ALLOW_HEADERS = [
     "accept",

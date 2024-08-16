@@ -15,6 +15,7 @@ const UseEditProfile = () => {
       // Get CSRF token from cookies
       const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
       const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : 'DUMMY_CSRF_TOKEN';
+      // console.log(localStorage.getItem('profile'));
 
       const response = await fetch('http://127.0.0.1:8000/api/authentication/profile/', {
         method: localStorage.getItem('profile') ? 'PUT': 'POST',

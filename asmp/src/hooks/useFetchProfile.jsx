@@ -25,6 +25,7 @@ const UseFetchProfile = () => {
             });
 
             if (response.status === 200) {
+                console.log("Response :", response.data);
                 setSuccess(true);
                 setFetchedProfile(response.data);
                 console.log(fetchedProfile);

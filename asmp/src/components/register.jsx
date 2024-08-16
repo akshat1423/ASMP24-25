@@ -4,7 +4,7 @@ import '../styles/Register.css';
 import Select from 'react-select';
 import UseSignup from '../hooks/useSignup';
 import Swal from 'sweetalert2';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Register() {
   const customStyles = {
@@ -65,6 +65,7 @@ function Register() {
   const [emailId, setEmailId] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordMatch, setPasswordMatch] = useState(true);
+  const navigate = useNavigate();
 
   const handleConfirmPasswordChange = (event) => {
     const confirmPasswordValue = event.target.value;
@@ -138,14 +139,18 @@ function Register() {
   const handleRegistration = async () => {
     const userData = {
       fullname: name,
-      email: emailId,
+      ldap: emailId,
       roll: rollNumber,
       dept: department,
       degree: degree,
       password: password,
       contact: contactNumber,
     };
-    signup(userData)
+    const result = await signup(userData);
+    if (result.success) {
+      Swal.fire('REGISTRATION SUCCESSFUL');
+      navigate('/login');
+    }
   };
 
   const inputStyle = ['input'];
@@ -153,7 +158,7 @@ function Register() {
   const disabledButtonStyle = ['button', 'button-disabled'];
 
   return (
-    localStorage.getItem('accessToken') !== null ? <Navigate to="/mentorCards" /> :
+    localStorage.getItem('accessToken') !== null ? <Navigate to="/login" /> :
       <div className='form-container'>
         <div className="image-containerr">
           <img src={logo} alt="Logo" className="logoo" />
@@ -221,7 +226,6 @@ function Register() {
         >
           {loading ? 'REGISTERING...' : 'REGISTER'}
         </button>
-        {success && Swal.fire('REGISTRATION SUCCESSFUL')}
         {error && Swal.fire('REGISTRATION FAILED', error, 'ERROR')}
         <div style={{ color: "rgba(255,255,255,0.8)", fontSize: "medium", fontFamily: 'Fraunces'}}>
           Already Registered ? <a href="/login">LOG IN</a>

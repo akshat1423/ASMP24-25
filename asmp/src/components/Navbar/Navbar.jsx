@@ -17,7 +17,9 @@ function NavbarContent({ navigate, location }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isOpen, setOpen] = useState(false);
   const [isBigScreen, setIsBigScreen] = useState(window.innerWidth > 950);
-  const [isLogged, setLogged] = useState(true);
+  // const [isLogged, setLogged] = useState(localStorage.getItem('accessToken') ?  true : setLogged(false));
+
+  // let accessToken = localStorage.getItem('accessToken')
 
   const notLoggedNavigationItems = [
     { name: "Sneak Peeks", to: "sneakPeeks", className: "sneakPeeks", id: "sneakPeeks", navLink:"/sneakPeeks" },
@@ -38,7 +40,7 @@ function NavbarContent({ navigate, location }) {
   const NavBigScreen = [
     { name: "FAQ", to: "faq", className: "faq", id: "faq", navLink:"/" },
     { name: "Team", to: "team", className: "team", id: "team", navLink:"/team" },
-    isLogged && { name: "Profile", to: "profile-nav", className: "profile-nav", id: "profile-nav", navLink:"/profile-nav" },
+    localStorage.getItem('accessToken') && { name: "Profile", to: "profile", className: "profile-nav", id: "profile-nav", navLink:"/profile" },
   ];
 
   const loggedNavSmallScreen = [
@@ -49,7 +51,7 @@ function NavbarContent({ navigate, location }) {
     { name: "Team", to: "team", className: "team", id: "team", navLink:"/team" },
     { name: "Wishlist", to: "wishlist", className: "wishlist", id: "wishlist", navLink:"/wishlist" },
     { name: "Choose your Mentors", to: "toggle", className: "toggle", id: "toggle", navLink:"/toggle" },
-    { name: "Profile", to: "profile-nav", className: "profile-nav", id: "profile-nav", navLink:"/profile-nav" },
+    { name: "Profile", to: "profile", className: "profile-nav", id: "profile-nav", navLink:"/profile" },
   ];
 
   const notLoggedNavSmallScreen = [
@@ -63,7 +65,7 @@ function NavbarContent({ navigate, location }) {
   ];
 
   const handleItemClick = (item) => {
-    const navigateRoutes = ['/team', '/register', '/login', '/profile-nav', '/toggle', '/sneakPeeks', '/events', '/wishlist'];
+    const navigateRoutes = ['/team', '/register', '/login', '/profile', '/toggle', '/sneakPeeks', '/events', '/wishlist'];
     
     if (navigateRoutes.includes(item.navLink)) {
       if (navigate) {
@@ -119,11 +121,11 @@ function NavbarContent({ navigate, location }) {
     <NavbarContainer>
       <NavbarInnerContainer>
         <LeftContainer>
-          <img src={logo} alt="Logo" style={{ objectFit: '100% 100%' }} />
+          <img src={logo} alt="Logo" onClick={() => navigate('/')} style={{ objectFit: '100% 100%' }} />
         </LeftContainer>
         <MiddleContainer>
           <MiddleInnerContainer>
-            {(isLogged ? loggedNavigationItems : notLoggedNavigationItems).map((item) => (
+            {(localStorage.getItem('accessToken') ? loggedNavigationItems : notLoggedNavigationItems).map((item) => (
               <li
                 key={item.name}
                 className={`${item.className} ${selectedItem === item.className ? "selected" : ""}`}
@@ -143,7 +145,7 @@ function NavbarContent({ navigate, location }) {
 
       {isOpen && (
         <NavbarExtendedContainer>
-          {(isBigScreen ? NavBigScreen : (isLogged ? loggedNavSmallScreen : notLoggedNavSmallScreen)).map((item) => (
+          {(isBigScreen ? NavBigScreen : (localStorage.getItem('accessToken') ? loggedNavSmallScreen : notLoggedNavSmallScreen)).map((item) => (
             item && (
               <li
                 key={item.name}

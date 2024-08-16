@@ -431,7 +431,11 @@ export default function Wishlist(props) {
   // }
   async function handleSubmit() {
     try {
+<<<<<<< HEAD
         const accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a";
+=======
+        const accessToken = localStorage.getItem('accessToken');
+>>>>>>> 9489e6568018ab22832a06313891bfca1204128e
         profile.accessToken = accessToken;
 
         const swalWithBootstrapButtons = Swal.mixin({
@@ -455,6 +459,7 @@ export default function Wishlist(props) {
                 if (result.isConfirmed) {
                     registerMentors(profile);
                     if (success) {
+                      console.log("Registered successfully");
                         Swal.fire(
                             "Registered!",
                             "You have successfully registered your preferences.",
@@ -464,6 +469,7 @@ export default function Wishlist(props) {
                 }
             });
     } catch (err) {
+      console.log("Error registering mentors");
         console.log(err);
     }
   }
@@ -501,9 +507,16 @@ export default function Wishlist(props) {
   //   );
   // }
 
+  // useEffect(() => {
+  //   fetchMentors();
+  // }, [mentors]);
+
   useEffect(() => {
-    fetchMentors();
-  }, []);
+    const checkMentors = async () => {
+      await fetchMentors(); // Make sure this fetches the latest wishlist
+    };
+    checkMentors();
+  }, [fetchMentors]);
 
   return (
     <>

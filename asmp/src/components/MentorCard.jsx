@@ -42,7 +42,7 @@ const MentorCard = ({ mentor }) => {
       setIsInWishlist(mentorInWishlist);
     };
     checkWishlist();
-  }, [mentor.id, fetchMentors, mentors]);
+  }, [mentor.id, fetchMentors]);
 
   return (
     <div className="col-sm-3" style={{ margin: "1rem", height: "fit-content" }}>

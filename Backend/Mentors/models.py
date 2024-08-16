@@ -1,13 +1,14 @@
 from django.db import models
 from .options import *
 
+
 class Mentor(models.Model):
     fullname = models.CharField(max_length=100)
     dept = models.CharField(max_length=100, choices=(BRANCH_CHOICES))
     degree = models.CharField(max_length=100, choices=(DEGREE_CHOICES))
     other_dept = models.CharField(max_length=100)
     other_degree = models.CharField(max_length=100)
-    year = models.CharField(choices=(YEAR_CHOICES), default=2014, max_length=4)
+    year = models.CharField(choices=(YEAR_CHOICES), default='2014', max_length=4)
     email = models.EmailField(max_length=100)
     contact = models.CharField(max_length=10)
     hostel = models.CharField(max_length=100, choices=(HOSTEL_CHOICES))
@@ -24,7 +25,7 @@ class Mentor(models.Model):
     popularity = models.IntegerField(default=0)
     
     def __str__(self):
-        return self.fullname+" "+self.designation
+        return str(self.id) + " " + self.fullname+" "+self.designation
     
     
     
