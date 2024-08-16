@@ -57,7 +57,7 @@ class Login(APIView):
         try:
             user = User.objects.get(ldap=request.data['ldap'])
             if(user.is_active == False):
-                return Response({"error": "User not verified, please verify your account from your webmail"}, status=status.HTTP_401_UNAUTHORIZED)
+                return Response({"error": "User not verified, please verify your account from your email"}, status=status.HTTP_401_UNAUTHORIZED)
             if(user.password == request.data['password']):
                 serializer = UserSerializer(user)
                 return Response({"accessToken": serializer.data['accessToken']}, status=status.HTTP_200_OK)
