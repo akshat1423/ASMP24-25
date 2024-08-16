@@ -22,7 +22,7 @@ function Login() {
 
   const handleLogin = () => {
     const userData = {
-      "email": emailId,
+      "ldap": emailId,
       "password": password
     };
 
@@ -34,7 +34,7 @@ function Login() {
   const disabledButtonStyle = ['button', 'button-disabled'];
 
   return (
-    localStorage.getItem('accessToken') !== null ? <Navigate to="/mentorCards" /> :
+    localStorage.getItem('accessToken') !== null ? <Navigate to="/toggle" /> :
       <div className='form-container'>
         <div className="image-containerr">
           <img src={logo} alt="Logo" className="logoo" />

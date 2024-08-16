@@ -7,31 +7,34 @@ import UseFetchProfile from '../hooks/useFetchProfile';
 
 export default function Profile() {
   const { fetchProfile, fetchedProfile } = UseFetchProfile();
-  useEffect(() => {
-    fetchProfile();
-    console.log("Fetched Profile", fetchedProfile);
-  }, []);
-
-  // const [loading, setLoading] = useState(true);
-
   // useEffect(() => {
-  //   const loadProfile = async () => {
+  //   async function fetchProfile(){
   //     await fetchProfile();
-  //     setLoading(false);
-  //   };
+  //     console.log("Fetched Profile", fetchedProfile);
+  //   }
+  //   fetchProfile();
+  // }, []);
 
-  //   loadProfile();
-  // }, [fetchProfile]);
+  const [loading, setLoading] = useState(true);
 
-  // if (loading) {
-  //   return <div>Loading...</div>; // Show loading message or spinner
-  // }
+  useEffect(() => {
+    const loadProfile = async () => {
+      await fetchProfile();
+      setLoading(false);
+    };
 
-  // if (!fetchedProfile) {
-  //   return <div>No profile data available.</div>; // Handle case where profile data is not available
-  // }
+    loadProfile();
+  }, [fetchProfile]);
 
-  if (fetchedProfile){
+  if (loading) {
+    return <div>Loading...</div>; // Show loading message or spinner
+  }
+
+  if (!fetchedProfile) {
+    return <div>No profile data available.</div>; // Handle case where profile data is not available
+  }
+
+  // if (fetchedProfile){
     return (
       <Container className="w-screen h-screen py-24 profile cursor-auto" fluid>
          <h1 className='md:pt-20 xl:py-0 text-center text-[#282624]'>User Profile</h1>
@@ -53,7 +56,7 @@ export default function Profile() {
    
          <Row className='lg:px-20'>
            <Col className='my-2' md={3} xs>Personal Email</Col>
-           <Col className='bg-[#3F2813] my-2 rounded-xl md:text-2xl text-xs text-[11px] justify-center items-center flex opacity-80' md={6} xs>{fetchedProfile.personal_email}</Col>
+           <Col className='bg-[#3F2813] my-2 rounded-xl md:text-2xl text-xs text-[11px] justify-center items-center flex opacity-80' md={6} xs>{ fetchedProfile.user.ldap }</Col>
          </Row>
    
          <Row className='lg:px-20'>
@@ -86,5 +89,5 @@ export default function Profile() {
        </Container>
      )
    }
-  }
+  // }
   

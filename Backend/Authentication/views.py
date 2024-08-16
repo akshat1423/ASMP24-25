@@ -30,19 +30,7 @@ class CreateUserAPIView(APIView):
             return Response(response_data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# class TokenVerification(APIView):
-#     def post(self, request, format=None):
-#         try:
-#             token = Token.objects.get(token=request.data['token'])
-#             user = token.user
-#             if(user.is_active):
-#                 return Response("User already verified",status=status.HTTP_400_BAD_REQUEST)
-#             user.is_active = True
-#             user.save()
-#             return Response("Verificaiton Successful",status=status.HTTP_200_OK)
-#         except Exception as e:
-#             print("Error while verifying token", e)
-#             return Response("No user found, please signup",status=status.HTTP_400_BAD_REQUEST)
+
 class TokenVerification(APIView):
     def get(self, request, token, format=None):
         try:
@@ -60,6 +48,7 @@ class TokenVerification(APIView):
         except Exception as e:
             print("Error while verifying token", e)
             return Response("An error occurred", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 class Login(APIView):
     def post(self, request, format=None):
@@ -147,6 +136,9 @@ class ProfileView(APIView):
             print("Error while updating profile", e)
             return Response(status=status.HTTP_404_NOT_FOUND)
 
+
+
+
 def send_sso_mail(
     mail_subject="User Verification of ASMP 2023 | SARC IIT Bombay",
     text_content="Yo man!",
@@ -171,30 +163,30 @@ def send_sso_mail(
     msgAlternative = MIMEMultipart("alternative")
     msgRoot.attach(msgAlternative)
     msghtml = f'''
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>User Verification of ASMP 2023 | SARC IIT Bombay</title>
-    </head>
-    <body>
-        <div style="font-family: Arial, sans-serif; line-height: 1.5; background-color: #f8f8f8; margin: 0; padding: 0;">
-        <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
-            <h1 style="font-size: 24px; color: #333333; margin-top: 0; margin-bottom: 20px;">
-                User Verification of ASMP 2023 | SARC IIT Bombay
-            </h1>
-            <p style="color: #555555; margin-bottom: 10px;">Dear User,</p>
-            <p style="color: #555555; margin-bottom: 10px;">
-                Thank you for signing up for the ASMP. To complete your registration,
-                please click the following link to verify your email address:
-            </p>
-            <p style="margin-bottom: 10px;">
-                <a href="http://127.0.0.1:8000/api/authentication/verify-user/{token}" style="text-decoration: none; background-color: #007bff; color: #ffffff; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
-            </p>
-        </div>
-        </div>
-    </body>
-    </html>
-    '''
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Verification of ASMP 2023 | SARC IIT Bombay</title>
+  </head>
+  <body>
+    <div style="font-family: Arial, sans-serif; line-height: 1.5; background-color: #f8f8f8; margin: 0; padding: 0;">
+      <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
+        <h1 style="font-size: 24px; color: #333333; margin-top: 0; margin-bottom: 20px;">User Verification of ASMP 2023 | SARC IIT Bombay</h1>
+        <p style="color: #555555; margin-bottom: 10px;">Dear User,</p>
+        <p style="color: #555555; margin-bottom: 10px;">
+          Thank you for signing up for the ASMP. To complete your registration,
+          please click the following link to verify your email address:
+        </p>
+        <p style="margin-bottom: 10px;">
+          <a href="http://127.0.0.1:8000/api/authentication/verify-user/{token}" style="text-decoration: none; background-color: #007bff; color: #ffffff; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+'''
+    
+    
     
     msgText = MIMEText(
         msghtml,

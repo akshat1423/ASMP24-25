@@ -2,6 +2,7 @@ from django.db import models
 from Authentication.models import User
 from Mentors.models import Mentor
 
+# Create your models here.
 class Registration(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     pref1 = models.ForeignKey(Mentor, on_delete=models.CASCADE, related_name='pref1')
