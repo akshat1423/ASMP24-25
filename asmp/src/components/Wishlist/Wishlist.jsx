@@ -431,7 +431,7 @@ export default function Wishlist(props) {
   // }
   async function handleSubmit() {
     try {
-        const accessToken = "184b1568-7e1b-4a92-a811-02e91f496510";
+        const accessToken = localStorage.getItem('accessToken');
         profile.accessToken = accessToken;
 
         const swalWithBootstrapButtons = Swal.mixin({
