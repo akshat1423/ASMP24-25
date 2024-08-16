@@ -501,9 +501,16 @@ export default function Wishlist(props) {
   //   );
   // }
 
+  // useEffect(() => {
+  //   fetchMentors();
+  // }, [mentors]);
+
   useEffect(() => {
-    fetchMentors();
-  }, []);
+    const checkMentors = async () => {
+      await fetchMentors(); // Make sure this fetches the latest wishlist
+    };
+    checkMentors();
+  }, [fetchMentors]);
 
   return (
     <>

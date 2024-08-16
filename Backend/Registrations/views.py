@@ -117,6 +117,8 @@ class WishListAPIView(APIView):
             wishlist = WishList.objects.get(user=user)
             mentors = []
 
+            print('wishlist.mentors.all() = ',wishlist.mentors.all())
+
             for mentor in wishlist.mentors.all():
                 serializer = MentorSerializer(mentor)
                 mentor_data = serializer.data;
