@@ -15,9 +15,9 @@ const UseRegisterMentors = (props) => {
 
     try {
       // Get CSRF token from cookies
-      // const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
-      // const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : "DUMMY_CSRF_TOKEN";
-      const csrfToken = "35Znfr3R2fYtO0zbFhuj3Li6s68F9sx9"
+      const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
+      const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : "DUMMY_CSRF_TOKEN";
+      // const csrfToken = "35Znfr3R2fYtO0zbFhuj3Li6s68F9sx9"
 
       const response = await fetch(
         "http://127.0.0.1:8000/api/registration/register/",
@@ -25,7 +25,7 @@ const UseRegisterMentors = (props) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "X-CSRFToken": csrfToken,
+            "X-CSRFToken": 'csrfToken',
           },
           body: JSON.stringify(userData),
         }
@@ -69,6 +69,7 @@ const UseRegisterMentors = (props) => {
           title: "Profile not found",
           text: "Please create a profile first",
           showConfirmButton: true,
+          
         })
         setError("Profile not found, Please create a profile first");
         setError(null);

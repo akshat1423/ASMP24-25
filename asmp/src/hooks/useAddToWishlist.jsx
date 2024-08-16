@@ -12,16 +12,16 @@ const UseAddToWishlist = () => {
     setError(null);
     setSuccess(false);
     const userData = {
-      "accessToken": localStorage.getItem('accessToken'), 
+      accessToken: localStorage.getItem('accessToken'), 
       // accessToken: "184b1568-7e1b-4a92-a811-02e91f496510",
       mentor: id,
     };
 
     try {
       // Get CSRF token from cookies
-      // const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
-      // const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : 'DUMMY_CSRF_TOKEN';
-      const csrfToken = "35Znfr3R2fYtO0zbFhuj3Li6s68F9sx9";
+      const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
+      const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : 'DUMMY_CSRF_TOKEN';
+      // const csrfToken = "35Znfr3R2fYtO0zbFhuj3Li6s68F9sx9";
 
       const response = await axios.put(
         `http://127.0.0.1:8000/api/registration/wishlist/`,
@@ -29,7 +29,7 @@ const UseAddToWishlist = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            "X-CSRFToken": csrfToken,
+            "X-CSRFToken": 'csrfToken',
           },
         }
       );
