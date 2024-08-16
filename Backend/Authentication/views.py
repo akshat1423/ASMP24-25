@@ -15,6 +15,8 @@ class CreateUserAPIView(APIView):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
+
+            Profile.objects.create(user=user)
             
             token, created = Token.objects.get_or_create(user=user)
             
