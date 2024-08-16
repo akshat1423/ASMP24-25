@@ -10,7 +10,7 @@ class User(models.Model):
     contact = models.CharField(max_length=10)
     password = models.CharField(max_length=100)
     is_active = models.BooleanField(default=False)
-    accessToken = models.UUIDField(default=uuid.uuid4, editable=True, unique=True)
+    accessToken = models.UUIDField(default=uuid.uuid4, editable= True, unique=True)
 
     def __str__(self):
         return self.fullname + " " + self.ldap

@@ -46,3 +46,16 @@
 line-height: 120%;
 
 }
+
+.name-heading{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+@media (max-width: 750px) {
+  .name-heading {
+    font-size: 1.5rem;
+  }
+}
