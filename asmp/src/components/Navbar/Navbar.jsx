@@ -40,7 +40,7 @@ function NavbarContent({ navigate, location }) {
   const NavBigScreen = [
     { name: "FAQ", to: "faq", className: "faq", id: "faq", navLink:"/" },
     { name: "Team", to: "team", className: "team", id: "team", navLink:"/team" },
-    localStorage.getItem('accessToken') && { name: "Profile", to: "profile-nav", className: "profile-nav", id: "profile-nav", navLink:"/profile-nav" },
+    localStorage.getItem('accessToken') && { name: "Profile", to: "profile", className: "profile-nav", id: "profile-nav", navLink:"/profile" },
   ];
 
   const loggedNavSmallScreen = [
@@ -51,7 +51,7 @@ function NavbarContent({ navigate, location }) {
     { name: "Team", to: "team", className: "team", id: "team", navLink:"/team" },
     { name: "Wishlist", to: "wishlist", className: "wishlist", id: "wishlist", navLink:"/wishlist" },
     { name: "Choose your Mentors", to: "toggle", className: "toggle", id: "toggle", navLink:"/toggle" },
-    { name: "Profile", to: "profile-nav", className: "profile-nav", id: "profile-nav", navLink:"/profile-nav" },
+    { name: "Profile", to: "profile", className: "profile-nav", id: "profile-nav", navLink:"/profile" },
   ];
 
   const notLoggedNavSmallScreen = [
