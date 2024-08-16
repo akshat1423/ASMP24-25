@@ -17,7 +17,7 @@ function NavbarContent({ navigate, location }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isOpen, setOpen] = useState(false);
   const [isBigScreen, setIsBigScreen] = useState(window.innerWidth > 950);
-  const [isLogged, setLogged] = useState(true);
+  const [isLogged, setLogged] = useState(!false);
 
   const notLoggedNavigationItems = [
     { name: "Sneak Peeks", to: "sneakPeeks", className: "sneakPeeks", id: "sneakPeeks", navLink:"/sneakPeeks" },
