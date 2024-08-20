@@ -15,9 +15,9 @@ const UseRegisterMentors = (props) => {
 
     try {
       // Get CSRF token from cookies
-      // const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
-      // const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : "DUMMY_CSRF_TOKEN";
-      const csrfToken = "sI1x5VBdzD4guzlwj9wgiOlNXMU3Dj0N"
+      const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
+      const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : "DUMMY_CSRF_TOKEN";
+      // const csrfToken = "sI1x5VBdzD4guzlwj9wgiOlNXMU3Dj0N"
       console.log("CSRF token:", csrfToken);
 
       const response = await fetch(
