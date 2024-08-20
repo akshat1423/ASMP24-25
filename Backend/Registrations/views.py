@@ -8,15 +8,10 @@ from .models import Registration, WishList
 from Mentors.serializers import MentorSerializer
 from Mentors.models import Mentor
 
-
 class RegistrationAPIView(APIView):
     def post(self, request):
-<<<<<<< HEAD
         # accessToken = request.data['accessToken']
         accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
-=======
-        accessToken = request.data['accessToken']
->>>>>>> 9489e6568018ab22832a06313891bfca1204128e
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -84,15 +79,10 @@ class RegistrationAPIView(APIView):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
 class WishListAPIView(APIView):
     def post(self, request):
-<<<<<<< HEAD
         # accessToken = request.data['accessToken']
         accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"       
-=======
-        accessToken = request.data['accessToken']
->>>>>>> 9489e6568018ab22832a06313891bfca1204128e
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -118,12 +108,8 @@ class WishListAPIView(APIView):
     
     def get(self, request):
         try:
-<<<<<<< HEAD
             # accessToken = request.query_params.get('accessToken')
             accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
-=======
-            accessToken = request.query_params.get('accessToken')
->>>>>>> 9489e6568018ab22832a06313891bfca1204128e
             user = User.objects.get(accessToken=accessToken)
             
             if not user.is_active:
@@ -156,12 +142,8 @@ class WishListAPIView(APIView):
 
     
     def put(self, request):
-<<<<<<< HEAD
         # accessToken = request.data['accessToken']
         accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
-=======
-        accessToken = request.data['accessToken']
->>>>>>> 9489e6568018ab22832a06313891bfca1204128e
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -183,9 +165,6 @@ class WishListAPIView(APIView):
             print("Error while updating wishlist", e)
             return Response(status=status.HTTP_404_NOT_FOUND)
         
-        
-
-
 import csv
 from django.http import HttpResponse
 from .models import Registration
@@ -222,9 +201,6 @@ def export_csv(request):
 
     return response
 
-
-
-
 def export_csv_wishlist(request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="wishlist_data.csv"'
@@ -245,4 +221,3 @@ def export_csv_wishlist(request, queryset):
         ])
 
     return response
-

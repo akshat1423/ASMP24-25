@@ -58,7 +58,7 @@ const FAQs = () => {
       <div className="font-fraunces text-6xl font-bold mx-5 p-4 opacity-90 text-white">
         FAQ's
       </div>
-      <div className="bg-gradient-to-r from-gray-950 from-0% via-slate-800 via-43.5% to-black 87.5% m-5 mb-0 p-4 text-white opacity-70">
+      <div className="bg-gradient-to-r from-gray-950 from-0% via-slate-800 via-43.5% to-black 87.5% m-5 mb-0 p-4 text-white opacity-70 rounded-[25px]">
         <Accordion defaultActiveKey="0">
           {faqsData.map((item, index) => {
             return (

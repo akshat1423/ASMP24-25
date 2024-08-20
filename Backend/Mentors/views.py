@@ -13,13 +13,8 @@ from Authentication.models import User
     
 class MentorListAPIView(APIView):
     def post(self, request, format=None, field=None):
-<<<<<<< HEAD
         # accessToken = request.data['accessToken']
         accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
-=======
-        accessToken = request.data['accessToken']
-        # print('accessToken = ',accessToken)
->>>>>>> 9489e6568018ab22832a06313891bfca1204128e
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):

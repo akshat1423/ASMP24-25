@@ -95,7 +95,7 @@ const MentorCard = ({ mentor }) => {
               fontSize: "20px",
             }}
           >
-            {mentor.work_profile}
+            {mentor.designation}
           </div>
           <div
             className="card-header"
