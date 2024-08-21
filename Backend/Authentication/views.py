@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import UserSerializer, ProfileSerializer
 from .models import User, Profile, Token
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
@@ -39,10 +39,10 @@ class TokenVerification(APIView):
             token_object = Token.objects.get(token=token)
             user = token_object.user
             if user.is_active:
-                return Response("User already verified", status=status.HTTP_400_BAD_REQUEST)
+                return redirect('http://localhost:5173/login')  # Redirect to login page if already verified
             user.is_active = True
             user.save()
-            return Response("Verification Successful", status=status.HTTP_200_OK)
+            return redirect('http://localhost:5173/login')  # Redirect to login page after successful verification
         except Token.DoesNotExist:
             print("Error while verifying token: Token does not exist")
             return Response("No user found, please signup", status=status.HTTP_400_BAD_REQUEST)
@@ -141,7 +141,7 @@ class ProfileView(APIView):
 
 
 def send_sso_mail(
-    mail_subject="User Verification of ASMP 2023 | SARC IIT Bombay",
+    mail_subject="User Verification of ASMP 2024 | SARC IIT Bombay",
     text_content="Yo man!",
     emailid="akashbanger2@gmail.com",
     token="",
@@ -167,12 +167,12 @@ def send_sso_mail(
 <!DOCTYPE html>
 <html>
   <head>
-    <title>User Verification of ASMP 2023 | SARC IIT Bombay</title>
+    <title>User Verification of ASMP 2024 | SARC IIT Bombay</title>
   </head>
   <body>
     <div style="font-family: Arial, sans-serif; line-height: 1.5; background-color: #f8f8f8; margin: 0; padding: 0;">
       <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
-        <h1 style="font-size: 24px; color: #333333; margin-top: 0; margin-bottom: 20px;">User Verification of ASMP 2023 | SARC IIT Bombay</h1>
+        <h1 style="font-size: 24px; color: #333333; margin-top: 0; margin-bottom: 20px;">User Verification of ASMP 2024 | SARC IIT Bombay</h1>
         <p style="color: #555555; margin-bottom: 10px;">Dear User,</p>
         <p style="color: #555555; margin-bottom: 10px;">
           Thank you for signing up for the ASMP. To complete your registration,

@@ -15,7 +15,9 @@ const UseFetchWishlist = () => {
     setSuccess(false);
 
     try {
-      const accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a";
+      // const accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a";
+      const accessToken = localStorage.getItem('accessToken');
+
 
       const response = await axios.get(`http://127.0.0.1:8000/api/registration/wishlist/`, {
         params: {

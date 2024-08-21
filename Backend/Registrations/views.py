@@ -10,8 +10,8 @@ from Mentors.models import Mentor
 
 class RegistrationAPIView(APIView):
     def post(self, request):
-        # accessToken = request.data['accessToken']
-        accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
+        accessToken = request.data['accessToken']
+        # accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -81,8 +81,8 @@ class RegistrationAPIView(APIView):
 
 class WishListAPIView(APIView):
     def post(self, request):
-        # accessToken = request.data['accessToken']
-        accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"       
+        accessToken = request.data['accessToken']
+        # accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"       
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -108,8 +108,8 @@ class WishListAPIView(APIView):
     
     def get(self, request):
         try:
-            # accessToken = request.query_params.get('accessToken')
-            accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
+            accessToken = request.query_params.get('accessToken')
+            # accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
             user = User.objects.get(accessToken=accessToken)
             
             if not user.is_active:
@@ -142,8 +142,8 @@ class WishListAPIView(APIView):
 
     
     def put(self, request):
-        # accessToken = request.data['accessToken']
-        accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
+        accessToken = request.data['accessToken']
+        # accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
