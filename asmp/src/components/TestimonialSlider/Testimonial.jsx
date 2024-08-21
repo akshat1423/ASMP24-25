@@ -73,7 +73,7 @@ const TestimonialSlider = () => {
       >
         TESTIMONIALS
       </div>
-      <div style={styles.sliderContainer}>
+      <div className="slider-container">
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={50}
@@ -98,12 +98,7 @@ const TestimonialSlider = () => {
             <SwiperSlide key={index}>
               <div style={styles.testimonialItem}>
                 <div
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
+                  style={styles.overContainer}
                 >
                   <div
                     className="name-heading"
@@ -151,25 +146,47 @@ const TestimonialSlider = () => {
 };
 
 const styles = {
-  sliderContainer: {
-    width: "100%",
-    maxWidth: "1500px",
-    margin: "auto",
-    padding: "20px 0",
-    height: "45vh",
-    "@media (maxWidth: 750px)": {
-      padding: "20px 20px",
-    },
-  },
+  // sliderContainer: {
+  //   width: "100%",
+  //   maxWidth: "1500px",
+  //   margin: "auto",
+  //   padding: "10px 0",
+  //   height: "45vh",
+  // },
+  // mediaQuery: {
+  //   '@media (maxWidth: 750px)': {
+  //     sliderContainer: {
+  //       padding: "10px 30px",
+  //     },
+  //   },
+  // },
 
   testimonialItem: {
     height: "100%",
     textAlign: "center",
-    background: "linear-gradient(90deg, rgba(108,108,111,0.2) 0%, rgba(251,251,254,0.2) 50%, rgba(132,128,128,0.2) 100%)",
-    borderRadius: "0",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    background: "rgba(255, 255, 255, 0.1)",
+    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
+    borderRadius: "10px",
+    border: "1px solid rgba(255, 255, 255, 0.18)",
     overflow: "hidden",
-    // margin:'0 5%',
+    padding: "20px",
+    boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+    "@media (maxWidth: 750px)": {
+      padding: "10px",
+    },
+  },
+
+  overContainer: {
+    height: "100%",
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    
+
+    "@media (maxWidth: 750px)": {
+      margin: "0 20%",
+    },
   },
 
   image: {
