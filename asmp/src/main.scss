@@ -15,9 +15,22 @@ $accordion-button-padding-y: 2px;
 $focus-ring-box-shadow: none;
 $accordion-icon-active-color: white;
 
+$input-btn-font-size-base: 14px;
+$input-btn-font-size-md: 24px;
+
+$input-btn-font-size: $input-btn-font-size-base;
+
 @import '../node_modules/bootstrap/scss/bootstrap.scss'; // Import other Sass files if needed
 
-
+@include media-breakpoint-up(md) {
+    .btn, .form-control {
+      font-size: $input-btn-font-size-md;
+    }
+}
+  
+//   @include media-breakpoint-up(lg) {
+//     $input-btn-font-size: 16px;
+//   }
 
 
 // Add your custom styles here

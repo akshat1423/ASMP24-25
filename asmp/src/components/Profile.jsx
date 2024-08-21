@@ -76,14 +76,11 @@ const { fetchProfile, fetchedProfile } = UseFetchProfile();
     if (fetchedProfile) {
       setProfile(prevProfile => ({
         ...prevProfile,
-        linkedin: fetchedProfile.linkedin || '',
-        sop: fetchedProfile.sop || '',
-        hostel: fetchedProfile.hostel || '',
-        room_no: fetchedProfile.room_no || '',
-        user: fetchedProfile.user || {},
-        joining_year: fetchedProfile.joining_year || '',
-        graduation_year: fetchedProfile.graduation_year || '',
-        academic_program: fetchedProfile.academic_program || '',
+        linkedin: fetchedProfile.linkedin,
+        sop: fetchedProfile.sop,
+        hostel: fetchedProfile.hostel,
+        room_no: fetchedProfile.room_no,
+        user: fetchedProfile.user,
       }));
     }
   }, [fetchedProfile]);
@@ -100,8 +97,10 @@ const { fetchProfile, fetchedProfile } = UseFetchProfile();
     const updatedProfile = {
       ...profile,
       accessToken,
-      sop: profile.sop || '', // Use an empty string if sop is not filled
-      linkedin: profile.linkedin || '', // Use an empty string if linkedin is not filled
+      sop: profile.sop, // Use an empty string if sop is not filled
+      linkedin: profile.linkedin, // Use an empty string if linkedin is not filled
+      hostel: profile.hostel,
+      room_no: profile.room_no,
     }
     editProfile(updatedProfile);
   };
@@ -116,26 +115,26 @@ const { fetchProfile, fetchedProfile } = UseFetchProfile();
 
   // if (fetchedProfile){
     return (
-      <Container className="w-screen h-[fit-content] py-24 profile cursor-auto" fluid>
+      <Container className="w-screen min-h-screen py-24 profile cursor-auto" fluid>
          <h1 className='md:pt-5 xl:py-0 text-center text-[#282624]'>User Profile</h1>
    
          <Row className='lg:px-20'>
-           <Col className='my-2' md={3} xs>Roll Number</Col>
-           <Col className='bg-[#3F2813] my-2 rounded-xl md:text-2xl justify-center items-center flex opacity-80' md={6} xs>{ fetchedProfile.user.roll }</Col>
+           <Col className='my-2 md:text-2xl text-sm' md={3} xs>Roll Number</Col>
+           <Col className='bg-[#3F2813] my-2 rounded-xl md:text-2xl text-sm justify-center items-center flex opacity-80' md={6} xs>{ fetchedProfile.user.roll }</Col>
          </Row>
    
          <Row className='lg:px-20'>
-           <Col className='my-2' md={3} xs>Username</Col>
+           <Col className='my-2 md:text-2xl text-sm' md={3} xs>Username</Col>
            <Col className='bg-[#3F2813] my-2 rounded-xl md:text-2xl text-sm justify-center items-center flex opacity-80' md={6} xs>{ fetchedProfile.user.fullname }</Col>
          </Row>
    
          <Row className='lg:px-20'>
-           <Col className='my-2' md={3} xs>LDAP</Col>
+           <Col className='my-2 md:text-2xl text-sm' md={3} xs>LDAP</Col>
            <Col className='bg-[#3F2813] my-2 rounded-xl md:text-2xl text-sm justify-center items-center flex opacity-80' md={6} xs></Col>
          </Row>
    
          <Row className='lg:px-20'>
-           <Col className='my-2' md={3} xs>Personal Email</Col>
+           <Col className='my-2 md:text-2xl text-sm' md={3} xs>Personal Email</Col>
            <Col className='bg-[#3F2813] my-2 rounded-xl md:text-2xl text-sm justify-center items-center flex opacity-80' md={6} xs>{ fetchedProfile.user.ldap }</Col>
          </Row>
    
@@ -155,35 +154,35 @@ const { fetchProfile, fetchedProfile } = UseFetchProfile();
          </Row> */}
 
          <Row className='lg:px-20'>
-           <Col className='my-2' md={3} xs>SOP</Col>
-           <Col className='bg-[#3F2813] my-2 rounded-xl justify-center items-center flex opacity-80' md={9} xs={6}>
+           <Col className='my-2 md:text-2xl text-sm' md={3} xs>SOP</Col>
+           <Col className='bg-[#3F2813] my-2 rounded-xl justify-center items-center flex opacity-80' md={9} xs={7}>
            <InputGroup size='xs' className='h-[200px]'>
-            <Form.Control as="textarea" aria-label="With textarea" onChange={handleInputChange} name="sop" value={profile.sop} className='md:text-2xl text-xs'/>
+            <Form.Control as="textarea" aria-label="With textarea" onChange={handleInputChange} name="sop" value={profile.sop} />
           </InputGroup>
           </Col>
          </Row>
 
          <Row className='lg:px-20'>
-           <Col className='my-2' md={3} xs>LinkedIn</Col>
+           <Col className='my-2 md:text-2xl text-sm' md={3} xs>LinkedIn</Col>
            <Col className='bg-[#3F2813] my-2 rounded-xl md:text-2xl justify-center items-center flex opacity-80' md={6} xs>
            <input type="text" onChange={handleInputChange} name="linkedin" value={profile.linkedin} className='bg-[#3F2813] my-2 rounded-xl md:text-2xl text-sm justify-center items-center flex opacity-80 w-full'/>
            
           </Col>
          </Row>
    
-         <Row className='lg:px-20 mt-5'>
+         <Row className='lg:px-20 mt-5 md:flex-none md:justify-normal flex justify-center'>
            <Col md={3} sm={0}></Col>
-           <Col className='bg-[#3F2813] md:mx-5 mx-2 my-2 rounded-xl md:text-2xl text-sm sm:p-4 p-1 justify-center items-center flex opacity-80 text-center' md={3} xs={5}>{ BRANCH_CHOICES[fetchedProfile.user.dept] }</Col>
-           <Col className='bg-[#3F2813] md:mx-5 mx-2 my-2 rounded-xl md:text-2xl text-sm sm:p-4 p-1 justify-center items-center flex opacity-80 text-center' md={3} xs={5}>{ DEGREE_CHOICES[fetchedProfile.user.degree] }</Col>
+           <Col className='bg-[#3F2813] md:mx-5 mx-2 my-2 rounded-xl md:text-2xl text-sm sm:p-4 p-1 justify-center items-center flex opacity-80 text-center' xl={3} xs={5} sm={4}>{ BRANCH_CHOICES[fetchedProfile.user.dept] }</Col>
+           <Col className='bg-[#3F2813] md:mx-5 mx-2 my-2 rounded-xl md:text-2xl text-sm sm:p-4 p-1 justify-center items-center flex opacity-80 text-center' xl={3} xs={5} sm={4}>{ DEGREE_CHOICES[fetchedProfile.user.degree] }</Col>
            
          </Row>
    
-          <Row className='lg:px-20 mt-1'>
+          <Row className='lg:px-20 mt-1 md:flex-none md:justify-normal flex justify-center items-center'>
           <Col md={3} sm={0}></Col>
-          <Col className='bg-[#3F2813] md:mx-5 my-2 mx-2 rounded-xl md:text-2xl text-xs sm:p-0 p-1 justify-center items-center flex opacity-80 text-center' md={3} xs={5}>Hostel:
+          <Col className='bg-[#3F2813] md:mx-5 my-2 mx-2 rounded-xl md:text-2xl text-xs sm:p-0 p-1 justify-center items-center flex opacity-80 text-center' xl={3} xs={5} sm={4}><div className='pl-5'>Hostel:</div>
            <input type="text" onChange={handleInputChange} name="hostel" value={profile.hostel} className='bg-[#3F2813] md:mx-5 my-2 rounded-xl md:text-2xl text-xs sm:p-0 p-1 justify-center items-center flex opacity-80 w-full text-center' placeholder='Hostel'/>
            </Col>
-           <Col className='bg-[#3F2813] md:mx-5 my-2 mx-2 rounded-xl md:text-2xl text-xs sm:p-0 p-1 justify-center items-center flex opacity-80 text-center' md={3} xs={5}>Room No:
+           <Col className='bg-[#3F2813] md:mx-5 my-2 mx-2 rounded-xl md:text-2xl text-xs sm:p-0 p-1 justify-center items-center flex opacity-80 text-center' xl={3} xs={5} sm={4}><div className='pl-5'>Room No:</div>
            <input type="text" onChange={handleInputChange} name="room_no" value={profile.room_no} className='bg-[#3F2813] md:mx-5 my-2 rounded-xl md:text-2xl text-xs sm:p-0 p-1 justify-center items-center flex opacity-80 w-full text-center' placeholder='Room No.'/>
            </Col>
           </Row>
