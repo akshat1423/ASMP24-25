@@ -7,7 +7,7 @@ import CursorAnimation from "../CursorAnimation";
 import Lottie from "lottie-react";
 import animationData from "../../assets/scroll.json";
 import Footer from "../Footer/Footer";
-import HomeBackground from "../../assets/images/home_bg.png"
+import './Homee.css'
 
 export default function Homee() {
   const scrollAnimation = () => {
@@ -21,15 +21,7 @@ export default function Homee() {
 
   return (
     <>
-      <div 
-        style={{
-          width: '100vw',
-          height: 'fit-content',
-          backgroundImage: `url(${HomeBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+      <div className='home-background-image'>
         <CursorAnimation />
         <div  
           style={{
@@ -42,7 +34,6 @@ export default function Homee() {
             cursor: "pointer",
           }}
         >
-
           <Lottie
             animationData={animationData}
             onClick={() => {

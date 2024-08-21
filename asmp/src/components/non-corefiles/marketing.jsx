@@ -68,13 +68,8 @@ const Marketing = () => {
       <div className="tab-content">
         <div className="tab-pane fade show active" id="marketing">
           <div
-            className="row"
+            className="wishlist-mentor-cards-ka-div"
             id="t05"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
           >
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}

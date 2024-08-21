@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap');
-
 :root {
     --switches-bg-color: #245331;
     --switches-label-color: #fff;
@@ -7,9 +6,32 @@
     --switch-text-color: #245331;
 }
 
-/* * {
-  font-family: 'Libre-Bodoni', sans-serif;  
-} */
+.toggle-bg-image {
+  background-image: url("../assets/asmp_bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 400vh;
+  z-index: -1;
+  position: relative;
+}
+
+.toggle-bg-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adjust the rgba value for desired darkness */
+  z-index: 1;
+}
+
+.toggle-bg-image > * {
+  position: relative;
+  z-index: 2;
+}
 
 .core-or-noncore-container {
     width: 75%;
@@ -43,11 +65,13 @@
     width: 50%;
     padding: 0.5rem;
     margin: 0;
-    font-size: 2rem;
-    text-align: center;
     cursor: pointer;
     background-color: transparent !important;
-    color: var(--switches-label-color);
+    font-family: 'Fraunces', serif;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 1.2;
+    color: white;
   }
   
   /* switch highlighters wrapper (sliding left / right)
@@ -154,10 +178,12 @@
   text-decoration: none;
   color: #D9CDB3;
   background-color: #245331;
-  border: 1px solid transparent;
-  border-radius: 17px;
+  border: 1px solid white;
+  border-radius: 25px;
   transition: background-color 0.3s, color 0.3s;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-family: 'Fraunces', serif;
+  line-height: 1.2;
 }
 
 /* Hover effect */
@@ -195,10 +221,12 @@
     text-decoration: none;
     color: #D9CDB3;
     background-color: #245331;
-    border: 1px solid transparent;
-    border-radius: 17px;
+    border: 1px solid white;
+    border-radius: 25px;
     transition: background-color 0.3s, color 0.3s;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-family: 'Fraunces', serif;
+    line-height: 1.2;
   }
   
   /* Hover effect */

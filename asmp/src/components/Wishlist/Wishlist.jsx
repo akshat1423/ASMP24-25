@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import backgroundImage from "../../assets/asmp_bg.jpeg";
 import Wishlist_Mentor from "./Wishlist_Mentor";
 import CursorAnimation from "../CursorAnimation";
 import "./Wishlist.css";
@@ -24,9 +23,14 @@ export default function Wishlist(props) {
   const [check, setCheck] = useState(false);
   const [showError, setShowError] = useState(null);
   const [same, setSame] = useState(null);
-  const { fetchMentors, setError, loading, error, mentors, setMentors } = UseFetchWishlist();
+  const { fetchMentors, setError, loading, error, mentors, setMentors } =
+    UseFetchWishlist();
   const { deleteMentor } = UseDeleteFromWishlist();
-  const { registerMentors, error: registerError, success } = UseRegisterMentors(props);
+  const {
+    registerMentors,
+    error: registerError,
+    success,
+  } = UseRegisterMentors(props);
 
   const handleInputChange = (index, event) => {
     const { value } = event.target;
@@ -372,7 +376,8 @@ export default function Wishlist(props) {
       width: "200px",
       textAlign: "center",
       padding: "1%",
-      fontSize: "20px",
+      fontFamily: "Fraunces, serif",
+      fontSize: "2vw",
       color: "white",
       background: "rgba(48, 82, 52, 0.5)",
       boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.67)",
@@ -380,6 +385,7 @@ export default function Wishlist(props) {
       WebkitBackdropFilter: "blur(9px)",
       border: "3px solid rgba(255, 255, 255, 0.3)",
       borderRadius: "17px",
+      lineHeight: "1.2",
     },
   };
 
@@ -431,43 +437,43 @@ export default function Wishlist(props) {
   // }
   async function handleSubmit() {
     try {
-        // const accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a";
-        const accessToken = localStorage.getItem('accessToken');
-        profile.accessToken = accessToken;
+      // const accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a";
+      const accessToken = localStorage.getItem("accessToken");
+      profile.accessToken = accessToken;
 
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: "btn btn-success",
-                cancelButton: "btn btn-danger",
-            },
-            buttonsStyling: false,
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success",
+          cancelButton: "btn btn-danger",
+        },
+        buttonsStyling: false,
+      });
+
+      swalWithBootstrapButtons
+        .fire({
+          title: "Are you sure?",
+          text: "You can register only once",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes register!",
+          cancelButtonText: "No, cancel!",
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            registerMentors(profile);
+            if (success) {
+              console.log("Registered successfully");
+              Swal.fire(
+                "Registered!",
+                "You have successfully registered your preferences.",
+                "success"
+              );
+            }
+          }
         });
-
-        swalWithBootstrapButtons
-            .fire({
-                title: "Are you sure?",
-                text: "You can register only once",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonText: "Yes register!",
-                cancelButtonText: "No, cancel!",
-            })
-            .then((result) => {
-                if (result.isConfirmed) {
-                    registerMentors(profile);
-                    if (success) {
-                      console.log("Registered successfully");
-                        Swal.fire(
-                            "Registered!",
-                            "You have successfully registered your preferences.",
-                            "success"
-                        );
-                    }
-                }
-            });
     } catch (err) {
       console.log("Error registering mentors");
-        console.log(err);
+      console.log(err);
     }
   }
 
@@ -510,7 +516,7 @@ export default function Wishlist(props) {
 
   useEffect(() => {
     const checkMentors = async () => {
-      await fetchMentors(); // Make sure this fetches the latest wishlist
+      await fetchMentors();
     };
     checkMentors();
   }, [fetchMentors]);
@@ -518,26 +524,24 @@ export default function Wishlist(props) {
   return (
     <>
       <CursorAnimation />
-      <div
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "400vh",
-          zIndex: -1,
-        }}
-      >
+      <div className="wishlist-background-image">
         <div style={{ height: "10vh" }}></div>
         <div className="wishlist-headings-1">Wishlist</div>
 
-        {/* <Wishlist_Mentor /> */}        
-        <div className="wishlist-mentor-cards">
-        {mentors && mentors.length > 0 ? (
+        {/* <Wishlist_Mentor /> */}
+        <div className="wishlist-mentor-cards-ka-div">
+          {mentors && mentors.length > 0 ? (
             mentors.map((mentor, index) => (
               <Wishlist_MentorCard key={mentor.id} mentor={mentor} />
             ))
           ) : (
-            <p>No mentors in the wishlist</p>
+            <p
+            style={{
+              fontFamily: "Fraunces, serif",
+              fontSize: "4vw",
+              lineHeight: "1.2",
+              color: "white",
+            }}>No mentors in the wishlist</p>
           )}
         </div>
 
@@ -650,13 +654,13 @@ export default function Wishlist(props) {
             </button>
           </div>
         </div>
-        
+
         <div style={styles.textCenter}>
           {showError && <p style={{ color: "white" }}>{showError}</p>}
           {registerError && <p style={{ color: "white" }}>{registerError}</p>}
           {same && <p style={{ color: "white" }}>{same}</p>}
           <button
-            disabled={showError || registerError || same} 
+            disabled={showError || registerError || same}
             onClick={handleSubmit}
             className="submit-button"
             style={styles.submitButton}

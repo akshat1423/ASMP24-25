@@ -65,16 +65,7 @@ const Toggle = () => {
   return (
     <>
       <CursorAnimation />
-      <div
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          height: "400vh",
-          zIndex: -1,
-        }}
-      >
+      <div className="toggle-bg-image">
         <div style={{ height: "10vh" }}></div>
         <div className="core-or-noncore-container">
           <div className="switches-container">
@@ -99,9 +90,22 @@ const Toggle = () => {
             <label htmlFor="noncore">Non Core</label>
 
             <div className="switch-wrapper">
-              <div className="switch">
-                <div>Core</div>
-                <div>Non Core</div>
+              <div
+                className="switch">
+                <div 
+                style={{
+                  fontFamily: "Fraunces, serif",
+                  fontSize: "3rem",
+                  lineHeight: "1.2",
+                  color: "#245331",
+                }}>Core</div>
+                <div
+                style={{
+                  fontFamily: "Fraunces, serif",
+                  fontSize: "3rem",
+                  lineHeight: "1.2",
+                  color: "#245331",
+                }}>Non Core</div>
               </div>
             </div>
           </div>

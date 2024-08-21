@@ -3,21 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Spin as Hamburger } from "hamburger-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from '../../assets/images/Sarc.png';
-import {
-  NavbarContainer,
-  LeftContainer,
-  MiddleContainer,
-  RightContainer,
-  NavbarInnerContainer,
-  MiddleInnerContainer,
-  NavbarExtendedContainer,
-} from "./navbar.style";
+import { NavbarContainer, LeftContainer, MiddleContainer, RightContainer, NavbarInnerContainer, MiddleInnerContainer, NavbarExtendedContainer} from "./navbar.style";
 
 function NavbarContent({ navigate, location }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isOpen, setOpen] = useState(false);
   const [isBigScreen, setIsBigScreen] = useState(window.innerWidth > 950);
-  // const [isLogged, setLogged] = useState(localStorage.getItem('accessToken') ?  true : setLogged(false));
+  // const [isLogged, setLogged] = useState(localStorage.getItem('accessToken') ? true : setLogged(false));
 
   // let accessToken = localStorage.getItem('accessToken')
 

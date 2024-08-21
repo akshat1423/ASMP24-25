@@ -6,7 +6,15 @@ const Footer = () => {
   return (
     <>
         <div className="asmp-footer">
-            <p>Made with ❤️ by SARC</p>
+            {/* <p>Made with ❤️ by SARC</p> */}
+            <div className="heart">
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <p style={{ margin: '0', fontFamily: "Fraunces, serif",}}>Made with </p>
+                <p className="heartbeat" style={{ margin: '0 5px' }}>❤️</p>
+                <p className="heartecho" style={{ margin: '0 5px' }}>❤️</p>
+                <p style={{ margin: '0', fontFamily: "Fraunces, serif",}}> by SARC</p>
+            </div>
+            </div>
             <div className="social-links">
                 <ul className='footer-ul'>
                     <li className='footer-li'>

@@ -68,15 +68,9 @@ const NonCoreManagement_consult = () => {
       <div className="tab-content">
         <div className="tab-pane fade show active" id="management_consulting">
           <div
-            className="row"
+            className="wishlist-mentor-cards-ka-div"
             id="t05"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
-            {loading && <p>Loading...</p>}
+          >            {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}
             {!loading &&
               !error &&
