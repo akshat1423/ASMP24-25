@@ -31,9 +31,9 @@ class Token(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    linkedin = models.CharField(max_length=200)
-    sop = models.CharField(max_length=3000)
-    hostel = models.CharField(max_length=100, choices=HOSTEL_CHOICES, default="", blank=True)
+    linkedin = models.CharField(max_length=200, blank=True)
+    sop = models.CharField(max_length=3000, blank=True)
+    hostel = models.CharField(max_length=100, default="", blank=True)
     room_no = models.CharField(max_length=10, default="", blank=True)
 
     def __str__(self):
