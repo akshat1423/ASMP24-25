@@ -157,7 +157,7 @@ const styles = {
     margin: "auto",
     padding: "20px 0",
     height: "45vh",
-    "@media (max-width: 750px)": {
+    "@media (maxWidth: 750px)": {
       padding: "20px 20px",
     },
   },

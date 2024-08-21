@@ -88,7 +88,6 @@ export const MiddleInnerContainer = styled.div`
     color: orange;
   }
 
-
   @media (max-width: 1050px){
     font-size: 1.4rem;
   }
@@ -115,7 +114,6 @@ export const RightContainer = styled.div`
     width: 15%;
   }
 `
-
 
 const slideIn = keyframes`
   from {

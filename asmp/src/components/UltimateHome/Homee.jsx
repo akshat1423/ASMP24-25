@@ -42,7 +42,7 @@ export default function Homee() {
             }}
           />
         </div>
-        <div style={{width:'100vw',height:'10vh',backgroundColor:'#313131'}}></div>
+        <div style={{width:'100vw',height:'7vh',backgroundColor:'transparent'}}></div>
         <Home />
         <About />
         <div style={{height:'1px'}} id="testimonials"></div>

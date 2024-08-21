@@ -14,7 +14,7 @@
   width: 100vw;
   height: 400vh;
   z-index: -1;
-  position: relative;
+  /* position: relative; */
 }
 
 .toggle-bg-image::before {

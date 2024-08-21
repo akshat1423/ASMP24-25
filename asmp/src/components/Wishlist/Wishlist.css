@@ -6,7 +6,7 @@
     width: 100vw;
     height: 400vh;
     z-index: -1;
-    position: relative;
+    /* position: relative; */
   }
   
   .wishlist-background-image::before {
@@ -18,11 +18,12 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.4); /* Adjust the rgba value for desired darkness */
     z-index: 1;
+    pointer-events: none;
   }
   
   .wishlist-background-image > * {
     position: relative;
-    z-index: 2;
+    z-index: 100;
   }
 
 .wishlist-headings-1 {
