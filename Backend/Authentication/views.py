@@ -39,10 +39,10 @@ class TokenVerification(APIView):
             token_object = Token.objects.get(token=token)
             user = token_object.user
             if user.is_active:
-                return redirect('http://localhost:5173/login')  # Redirect to login page if already verified
+                return redirect('https://asmp.sarc-iitb.org/login')  # Redirect to login page if already verified
             user.is_active = True
             user.save()
-            return redirect('http://localhost:5173/login')  # Redirect to login page after successful verification
+            return redirect('https://asmp.sarc-iitb.org/login')  # Redirect to login page after successful verification
         except Token.DoesNotExist:
             print("Error while verifying token: Token does not exist")
             return Response("No user found, please signup", status=status.HTTP_400_BAD_REQUEST)

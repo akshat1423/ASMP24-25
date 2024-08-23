@@ -9,13 +9,13 @@
   flex-direction: column;
   justify-content: center; 
   align-items: center;
-  width: 100%;
+  width: 100%!important;
   height: auto; 
   background-color: black;
 }
 
 .video {
-  width: 100vw; 
+  width: 100%!important; 
   height: auto;
   display: flex;
   align-items: center; 
@@ -25,7 +25,8 @@
 }
 
 video {
-  width: 100%;
+  width: 100%!important;
   height: auto; 
   object-fit: cover;
+  display: block!important;
 }
