@@ -1,8 +1,8 @@
 import React from "react";
 import LazyLoad from "react-lazyload";
-import asmpTrailerMp4 from "../../assets/videos/ASMPkatrailer.mp4";
-import asmpTrailerWebm from "../../assets/videos/ASMPkaTrailer.webm";
-import posterImage from "../../assets/images/posterimg.png";
+import asmpTrailerMp4 from "../../assets/videos/asmp.mp4";
+
+import posterImage from "../../assets/images/posterimage.jpg";
 import "./Home.css";
 
 function Home() {
@@ -19,7 +19,6 @@ function Home() {
                 poster={posterImage}
               >
                 <source src={asmpTrailerMp4} type="video/mp4" />
-                <source src={asmpTrailerWebm} type="video/webm" />
                 ASMP VIDEO
               </video>
             </LazyLoad>

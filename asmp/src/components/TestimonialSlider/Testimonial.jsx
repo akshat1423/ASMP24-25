@@ -6,38 +6,37 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./swiper-custom.css";
 import img from "./img.png";
+import img4 from './shreyas[1].png'
+import img1 from './harshil[1].png'
+import img2 from './dhruv garg[1].png'
+import img3 from './jasmine[1].png'
 
 const testimonials = [
   {
-    name: "Jinisha Sabadra",
-    image: "path-to-image-1.jpg",
+    name: "Harshil Khatri",
+    image: img1,
     feedback:
-      "Industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "ASMP paired me with an exceptional mentor whose humble approach and industry insights have been invaluable. His support, from college to startup plans, has boosted my confidence. I’m grateful to the Student Alumni Relations Cell for connecting me with a mentor who has significantly shaped my future.",
   },
   {
-    name: "Jinisha Sabadra",
-    image: "path-to-image-2.jpg",
+    name: "Dhruv Garg",
+    image: img2,
     feedback:
-      "Industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "ASMP connected me with an amazing mentor in analytics who helped me navigate my career path. Over the past year, he’s guided me through my internship, provided data science resources, reviewed my resume, and supported me whenever I felt lost. Though we haven’t met in person yet, I hope to soon. Thanks, SARC!",
   },
   {
-    name: "Jinisha Sabadra",
-    image: "path-to-image-3.jpg",
+    name: "Jasmine Multani",
+    image: img3,
     feedback:
-      "Industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "My ASMP mentor offered invaluable support and practical insights into consulting. He regularly checked on my progress and encouraged long-term career goals. His advice has greatly impacted my growth. I’m thankful to ASMP for connecting me with a mentor who’s become a lifelong friend.",
   },
   {
-    name: "Jinisha Sabadra",
-    image: "path-to-image-4.jpg",
+    name: "Shreyas Sinha",
+    image: img4,
     feedback:
-      "Industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "ASMP has been amazing, providing me with a mentor who’s always there for advice and guidance. His support during the BCG Ideathon was invaluable, and despite his busy schedule, he made time to keep me on track. I’m grateful to ASMP for connecting me with a mentor who truly cares about my success."
   },
-  {
-    name: "Jinisha Sabadra",
-    image: "path-to-image-5.jpg",
-    feedback:
-      "Industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
+  
 ];
 
 const TestimonialSlider = () => {
@@ -123,7 +122,7 @@ const TestimonialSlider = () => {
                         justifyContent: "center",
                       }}
                     >
-                      <img src={img} alt="" />
+                      <img src={testimonial.image} alt="" />
                     </div>
                     <div
                       className="testimonal-content"

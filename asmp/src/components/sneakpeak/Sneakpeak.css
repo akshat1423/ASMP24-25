@@ -76,10 +76,8 @@
 
 /* Responsive Design */
 
-@media (max-width: 900px) {
-  .swiper-slide {
-    /* padding: 10px; */
-  }
+/* @media (max-width: 900px) {
+
 
   .heading {
     font-size: 1.8em;
@@ -88,9 +86,9 @@
   .swiper-container {
     width: 90%;
   }
-}
+} */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .swiper-slide {
     padding: 10px;
     font-size: 0.9em;
@@ -103,25 +101,5 @@
   .swiper-container {
     width: 95%;
   }
-  .swiper-slide{
-    slidesPerView:1;
-  }
-}
-
-@media (max-width: 576px) {
-  .swiper-slide {
-    padding: 5px;
-    font-size: 0.8em;
-  }
-
-  .heading {
-    font-size: 1.2em;
-  }
-
-  .swiper-container {
-    width: 100%;
-  }
-  .swiper-slide{
-    slidesPerView:1;
-  }
+  
 }

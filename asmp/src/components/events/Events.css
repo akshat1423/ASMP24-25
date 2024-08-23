@@ -26,7 +26,7 @@
 
 
 .heading {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   text-align: center;
   margin-bottom: 32px;
   color: #fff;
@@ -43,6 +43,7 @@
   width: 100%;
   height: auto;
   display: block;
+  height: 250px;
   max-width: 100%; /* Ensure the image doesn't exceed its container's width */
   border: 5px solid white; /* Add a white border */
 }

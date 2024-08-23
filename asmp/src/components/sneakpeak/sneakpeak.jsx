@@ -17,47 +17,41 @@ import {
 function Sneakpeak() {
   const slides = [
     {
-      title: "Co-founder & CTO - Velocity",
-      location: "Mumbai",
-      description: "Chemical Engineering, 2014",
+      title: "ML engineer, Meta",
+      location: "London",
+      description: "Electrical Engineering DD 2014",
       link: "/Login",
       buttonText: "Grab Mentorship Now!",
     },
     {
-      title: "Co-founder & CTO - Velocity",
-      location: "Mumbai",
-      description: "Chemistry, 2014",
+      title: "Senior Scientist, University of Twente",
+      location: "Netherlands",
+      description: "Engineering Physics, 2014",
       link: "/Login",
       buttonText: "Grab Mentorship Now!",
     },
     {
-      title: "Co-founder & CTO - Velocity",
-      location: "Mumbai",
-      description: "Civil Engineering, 2014",
+      title: "Senior Director, Software Engineering, Salesforce, Inc",
+      location: "Sunnyvale, US",
+      description: "Computer Science Engineering, 1993",
       link: "/Login",
       buttonText: "Grab Mentorship Now!",
     },
     {
-      title: "Co-founder & CTO - Velocity",
+      title: "Strategy- Director's Office, Reliance Industries Limited",
       location: "Mumbai",
-      description: "Electrical Engineering, 2014",
+      description: "Electrical Engineering, 2011",
       link: "/Login",
       buttonText: "Grab Mentorship Now!",
     },
     {
-      title: "Co-founder & CTO - Velocity",
-      location: "Mumbai",
-      description: "Chemical Engineering, 2014",
+      title: "Manager, Data Science and Business Analytics , ICICI Bank",
+      location: "Banglore",
+      description: "MEMS, 2020",
       link: "/Login",
       buttonText: "Grab Mentorship Now!",
     },
-    {
-      title: "Co-founder & CTO - Velocity",
-      location: "Mumbai",
-      description: "Mechanical Engineering, 2014",
-      link: "/Login",
-      buttonText: "Grab Mentorship Now!",
-    },
+   
   ];
 
   return (
@@ -65,23 +59,21 @@ function Sneakpeak() {
       <CursorAnimation />
       <div className="sneakpeak-container">
         <br />
-        <h1 className="heading">Sneak Peeks</h1>
+        <h1 className="heading" style={{fontFamily: "Fraunces, serif",}}>Sneak Peeks</h1>
         <Swiper
           spaceBetween={60}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          // autoplay={{
-          //   delay: 5000,
-          // }}
+          autoplay={{
+            delay: 5000,
+          }}
           loop={true}
-          slidesPerView={2}
+          // slidesPerView={2}
           breakpoints={{
-            1024: {
-              slidesPerView: 2, // 3 slides for large screens
-            },
-            768: {
-              slidesPerView: 1, // 1 slide for medium screens
+    
+            600: {
+              slidesPerView: 2, // 3slide for medium screens
             },
             576: {
               slidesPerView: 1, // 1 slide for small screens
