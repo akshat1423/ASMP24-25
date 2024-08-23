@@ -35,13 +35,13 @@ const Team = () => {
     { name: 'Vanshika Bansal', image: image7,contact:'+91 8949929616' },
     { name: 'Yash Choudhary', image: image8 ,contact:'+91 9358446536'},
   ];
-  const webCoordinators = [
-    { name: 'Yash', image: image9 ,contact:'+91 7433002732'},
-    { name: 'Pratiksha',  image: image10,contact:'+91 7568797288' },
-    { name: 'Khushi Yadav', image: image11,contact:'+91 8930097733' },
-    { name: 'Kaushik Mandal',  image: image12 ,contact:'+91 9394564173'},
-    { name: 'Arush Narayan Srivastav', image: image13,contact:'+91 9005549919' },
+  const webCoordinators = [ 
     { name: 'Aryan Badkul ', image: image14 ,contact:'+91 8103078069'},
+    { name: 'Arush Narayan Srivastav', image: image13,contact:'+91 9005549919' },
+    { name: 'Kaushik Mandal',  image: image12 ,contact:'+91 9394564173'},
+    { name: 'Khushi Yadav', image: image11,contact:'+91 8930097733' },
+    { name: 'Pratiksha',  image: image10,contact:'+91 7568797288' },
+    { name: 'Yash', image: image9 ,contact:'+91 7433002732'},
   ];
 
   return (
