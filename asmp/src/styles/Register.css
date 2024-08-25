@@ -32,7 +32,7 @@
   color: white;
 }
 
-.input, .email-input input,.react-select__control{
+.input1, .email-input input, .react-select__control {
   font-family: 'Fraunces';
   width: 80%;
   max-width: 400px; /* Maintain ratio */
@@ -45,13 +45,14 @@
   margin-bottom: 10px;
   box-sizing: border-box;
 }
-.css-b62m3t-container{
+
+.css-b62m3t-container {
   font-family: 'Fraunces';
   width: 80%;
   max-width: 400px;
 }
 
-.input::placeholder, .email-input input::placeholder, .react-select__placeholder {
+.input1::placeholder, .email-input input::placeholder, .react-select__placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -108,10 +109,11 @@
     height: 15vh;
   }
 
-  .email-input input, .input, .react-select__control{
+  .email-input input, .input1, .react-select__control {
     max-width: 600px;
   }
-  .css-b62m3t-container{
+  
+  .css-b62m3t-container {
     max-width: 600px;
   }
 
@@ -136,12 +138,10 @@
     margin-bottom: 15px;
   }
 
-  .email-input input, .input, .react-select__control,.css-b62m3t-container{
+  .email-input input, .input1, .react-select__control, .css-b62m3t-container {
     max-width: 700px;
   }
-  .css-b62m3t-container{
-    max-width: 700px;
-  }
+
   .button {
     width: 250px;
     font-size: 20px;
