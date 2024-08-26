@@ -43,11 +43,13 @@ function Register() {
       ...base,
       borderRadius: 0,
       marginTop: 0,
+      color: 'black',
       background: "rgba(255, 255, 255)"
     }),
     menuList: base => ({
       ...base,
       padding: 0,
+      color: 'black',
       background: "rgba(255, 255, 255, 0.3)"
     }),
     placeholder: base => ({
