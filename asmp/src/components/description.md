@@ -1,1 +1,0 @@
-## make seperate folders for diff components here in components folder

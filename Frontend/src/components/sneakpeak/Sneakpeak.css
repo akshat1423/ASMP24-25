@@ -1,0 +1,105 @@
+.sneakpeak-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border-radius: 10px;
+  min-height: 100vh;
+  min-width: 100%;
+  background-image: url('./ArtStation - Explore.jpeg');
+  background-size: cover; /* Ensures background image covers the entire screen */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+}
+
+/* Heading styling */
+.heading {
+  text-align: center;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+/* Swiper container styling */
+.swiper_container {
+  position: relative;
+}
+
+/* Swiper slide styling */
+.swiper-slide {
+  background: #D9D9D961;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Ensure text is displayed in a column */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  /* padding: 20px; */
+}
+
+/* Card text styling */
+.swiper-slide h4,
+.swiper-slide h6,
+.swiper-slide p {
+  color: #fff; 
+  margin: 10px 0;
+}
+
+/* Button styling */
+.btn {
+  background: #2E8B57 !important; /* Forest green color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #225f42;
+  color: #fff !important;
+}
+
+/* Swiper navigation buttons */
+.slider-controler .swiper-button-prev,
+.slider-controler .swiper-button-next {
+  color: #fff; 
+  font-size: 1.5em;
+}
+.slider-controler .swiper-button-prev:hover,
+.slider-controler .swiper-button-next:hover {
+  color: #fff;
+}
+
+/* Responsive Design */
+
+/* @media (max-width: 900px) {
+
+
+  .heading {
+    font-size: 1.8em;
+  }
+
+  .swiper-container {
+    width: 90%;
+  }
+} */
+
+@media (max-width: 600px) {
+  .swiper-slide {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .heading {
+    font-size: 1.5em;
+  }
+
+  .swiper-container {
+    width: 95%;
+  }
+  
+}

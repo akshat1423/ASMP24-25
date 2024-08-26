@@ -1,0 +1,82 @@
+/* swiper-custom.css */
+
+.swiper-pagination {
+  width: 100%;
+  height: 4px;
+  display: flex;
+  justify-content: space-evenly;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 20px;
+
+}
+
+.swiper-pagination-bullet {
+  width: 100px;
+  /* width: 4px; */
+  height: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  margin: 0 4px;
+  border-radius: 0;
+}
+
+.swiper-pagination-bullet-active {
+  background:#52aeba;
+  height: 4px; /* Ensuring active bullets are rectangular */
+  /* width: 4px; */
+  border-radius: 0; /* Ensure no rounded corners */
+}
+
+.swiper{
+  height: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev{
+  color: black;
+}
+.testimonal-content {
+  height: 100%;
+  width: 65%;
+  color: black;
+  text-align: justify;
+  padding: 2%;
+  font-size: 60%;
+  font-family: sans-serif;
+line-height: 120%;
+
+}
+
+.name-heading{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+@media (max-width: 750px) {
+  .name-heading {
+    font-size: 1.5rem;
+  }
+  .slider-container{
+    padding: 10px 30px;
+  }
+}
+
+.slider-container{
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  padding: 10px 0;
+  height: 45vh;
+}
+
+@media (max-width: 750px) {
+
+  .slider-container{
+    padding: 10px 5%;
+  }
+  .swiper-pagination-bullet{
+    width: 70px;
+  }
+}
