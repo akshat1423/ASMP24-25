@@ -179,7 +179,7 @@ def send_sso_mail(
           please click the following link to verify your email address:
         </p>
         <p style="margin-bottom: 10px;">
-          <a href="http://127.0.0.1:8000/api/authentication/verify-user/{token}" style="text-decoration: none; background-color: #007bff; color: #ffffff; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
+          <a href="https://asmp.sarc-iitb.org/api/authentication/verify-user/{token}" style="text-decoration: none; background-color: #007bff; color: #ffffff; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
         </p>
       </div>
     </div>

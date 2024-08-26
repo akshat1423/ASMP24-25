@@ -14,7 +14,6 @@ from Authentication.models import User
 class MentorListAPIView(APIView):
     def post(self, request, format=None, field=None):
         accessToken = request.data['accessToken']
-        # accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
         try:
             user = User.objects.get(accessToken=accessToken)
             if(user.is_active == False):
@@ -34,8 +33,8 @@ class MentorListAPIView(APIView):
         
         for mentor in mentors:
             mentor.should_show = mentor.popularity <= mentor.preferred_mentees*15
-            if(mentor.id == 658):
-                mentor.should_show = False
+            # if(mentor.id == 658):
+            #     mentor.should_show = False
             mentor.save()
 
         wishlist_mentors = WishList.objects.filter(user=user).values_list('mentors', flat=True)

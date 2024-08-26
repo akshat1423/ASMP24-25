@@ -17,7 +17,7 @@ class Mentor(models.Model):
     country = models.CharField(max_length=100, choices=(COUNTRY_CHOICES))
     designation = models.CharField(max_length=100)
     company_name = models.CharField(max_length=100)
-    work_profile = models.CharField(max_length=100)
+    work_profile = models.CharField(max_length=4000)
     pref = models.CharField(max_length=100, choices=(FIELDS))
     otherPref = models.CharField(max_length=100)
     preferred_mentees = models.IntegerField()

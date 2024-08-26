@@ -14,13 +14,25 @@ class RegistrationAPIView(APIView):
         # accessToken = "82cf3f73-f995-4d72-92bb-7c158a38232a"
         try:
             user = User.objects.get(accessToken=accessToken)
-            if(user.is_active == False):
+            if not user.is_active:
                 return Response("User not verified", status=status.HTTP_400_BAD_REQUEST)
-            if(not Profile.objects.filter(user=user)[0]):
+            
+            # Fetch the user's profile and check if it exists
+            try:
+                profile = Profile.objects.get(user=user)
+            except Profile.DoesNotExist:
                 return Response("Profile Not Found", status=status.HTTP_404_NOT_FOUND)
+            
+            # Check if the 'sop' or 'linkedin' fields are blank
+            if not profile.sop or not profile.linkedin:
+                return Response("SOP and LinkedIn must not be blank", status=status.HTTP_407_PROXY_AUTHENTICATION_REQUIRED)
+            
+        except User.DoesNotExist:
+            return Response("Error while fetching user", status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             print("Error while fetching user", e)
             return Response(status=status.HTTP_404_NOT_FOUND)
+        
         print(user)
         request.data['user'] = user.id
         serializer = RegistrationSerializer(data=request.data)
@@ -32,16 +44,16 @@ class RegistrationAPIView(APIView):
                 pref4 = Mentor.objects.get(id=serializer.validated_data['pref4'].id)
                 pref5 = Mentor.objects.get(id=serializer.validated_data['pref5'].id)
                 
-                if(pref1.should_show == False or pref2.should_show == False or pref3.should_show == False or pref4.should_show == False or pref5.should_show == False):
-                    if(pref1.should_show == False):
+                if not (pref1.should_show and pref2.should_show and pref3.should_show and pref4.should_show and pref5.should_show):
+                    if not pref1.should_show:
                         return Response(f'Mentor with ID: {pref1.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
-                    if(pref2.should_show == False):
+                    if not pref2.should_show:
                         return Response(f'Mentor with ID: {pref2.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
-                    if(pref3.should_show == False):
+                    if not pref3.should_show:
                         return Response(f'Mentor with ID: {pref3.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
-                    if(pref4.should_show == False):
+                    if not pref4.should_show:
                         return Response(f'Mentor with ID: {pref4.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
-                    if(pref5.should_show == False):
+                    if not pref5.should_show:
                         return Response(f'Mentor with ID: {pref5.id} is not available', status=status.HTTP_406_NOT_ACCEPTABLE)
                         
                 pref1.popularity += 5
@@ -50,19 +62,19 @@ class RegistrationAPIView(APIView):
                 pref4.popularity += 2
                 pref5.popularity += 1
                 
-                if(pref1.popularity > pref1.preferred_mentees*15):
+                if pref1.popularity > pref1.preferred_mentees * 15:
                     pref1.should_show = False
                 
-                if(pref2.popularity > pref2.preferred_mentees*15):
+                if pref2.popularity > pref2.preferred_mentees * 15:
                     pref2.should_show = False
                 
-                if(pref3.popularity > pref3.preferred_mentees*15):
+                if pref3.popularity > pref3.preferred_mentees * 15:
                     pref3.should_show = False
                 
-                if(pref4.popularity > pref4.preferred_mentees*15):
+                if pref4.popularity > pref4.preferred_mentees * 15:
                     pref4.should_show = False
                     
-                if(pref5.popularity > pref5.preferred_mentees*15):
+                if pref5.popularity > pref5.preferred_mentees * 15:
                     pref5.should_show = False
                     
                 pref1.save()
@@ -78,6 +90,7 @@ class RegistrationAPIView(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class WishListAPIView(APIView):
     def post(self, request):

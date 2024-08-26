@@ -1,3 +1,39 @@
+# version: '2.2'
+
+# services:
+#   asmpmenteebackend:
+#     restart: unless-stopped
+#     build:
+#       context: ./Backend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8000:8000"
+#     entrypoint: /Backend/wsgi-entrypoint.sh
+#     volumes:
+#       - ./Backend:/Backend/
+#     expose:
+#       - 8000
+#     networks:
+#       - mynetwork
+  
+
+#   asmpmenteefrontend:
+#     build:
+#       context: ./asmp
+#       dockerfile: Dockerfile
+#     ports:
+#       - "5002:5002"
+#     volumes:
+#       - ./asmp:/asmp
+#     networks:
+#       - mynetwork
+
+# networks:
+#   mynetwork:
+#     name: yearbook23_mynetwork
+
+
+
 version: '2.2'
 
 services:
@@ -19,12 +55,12 @@ services:
 
   asmpmenteefrontend:
     build:
-      context: ./asmp
+      context: ./Frontend
       dockerfile: Dockerfile
     ports:
-      - "5002:5002"
+      - "5010:5010"
     volumes:
-      - ./asmp:/asmp
+      - ./Frontend:/Frontend
     networks:
       - mynetwork
 
