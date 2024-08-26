@@ -29,7 +29,7 @@ const UseAddToWishlist = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            "X-CSRFToken": 'csrfToken',
+            "X-CSRFToken": csrfToken,
           },
         }
       );

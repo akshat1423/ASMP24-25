@@ -23,7 +23,7 @@ const UseFetchMentors = () => {
         try {
             // Get CSRF token from cookies
             const csrfTokenMatch = document.cookie.match(/csrftoken=([^;]+)/);
-            console.log()
+            // console.log()
             const csrfToken = csrfTokenMatch ? csrfTokenMatch[1] : '';
             // const csrfToken = "35Znfr3R2fYtO0zbFhuj3Li6s68F9sx9"
             // console.log('csrfToken = ', csrfToken);
